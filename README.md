@@ -32,6 +32,9 @@ When a new version of this stack is available on [bitrise.io](https://www.bitris
 we'll run `system_report.sh` and post the result into
 the [bitrise.io GitHub repository](https://github.com/bitrise-io/bitrise.io), under the `system_reports` folder.
 
+*We're still working on proper Pull Request checks, if your PR checks
+would fail there's probably no issue at all, we'll let you know
+if you have to change anything.*
 
 ## Create VM & OS X installation
 
