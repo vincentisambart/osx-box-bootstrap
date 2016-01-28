@@ -40,6 +40,7 @@ the [bitrise.io GitHub repository](https://github.com/bitrise-io/bitrise.io), un
 * Create a new OS X VM
   * 4 GB RAM
   * 2 CPU
+    * Allow: Hardware virtualization - expand the CPU options, and enable this option
   * about 100 GB disk space
 * Start the VM
 * Install OS X:
