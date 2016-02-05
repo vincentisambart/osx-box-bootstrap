@@ -142,6 +142,7 @@
       script: installers/install_brew.sh creates=/usr/local/bin/brew
     - homebrew: update_homebrew=yes upgrade_all=no
     # brew some commands
+    - homebrew: name=wine state=present
     - homebrew: name=git state=present
     - homebrew: name=wget state=present
     - homebrew: name=mercurial state=present
