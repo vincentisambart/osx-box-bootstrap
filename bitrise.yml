@@ -35,7 +35,7 @@ workflows:
             echo " (!!!) When prompted for a password provide the VM's SSH password"
             echo '       should be "vagrant" if you do a default vagrant setup'
             set -x
-            ansible-playbook --ask-pass -i "${VM_BUILD_IP}", "./vagrant-setup-playbook.yml"
+            ansible-playbook -v --ask-pass -i "${VM_BUILD_IP}", "./vagrant-setup-playbook.yml"
 
   provision-vm:
     description: |-
@@ -50,7 +50,7 @@ workflows:
             set -e
             set -x
             echo " * VM_BUILD_BOX_VERSION: $VM_BUILD_BOX_VERSION"
-            ansible-playbook -e bitrise_box_version="${VM_BUILD_BOX_VERSION}" -e xcode_path="${XCODE_PATH}" --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./playbook.yml"
+            ansible-playbook -v -e bitrise_box_version="${VM_BUILD_BOX_VERSION}" -e xcode_path="${XCODE_PATH}" --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./playbook.yml"
 
   DEPRECATED-create-xcode-version-mapping:
     description: |-
@@ -63,7 +63,7 @@ workflows:
             #!/bin/bash
             set -e
             set -x
-            ansible-playbook -e xcode_path="${XCODE_PATH}" --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./xcode-version-map-files-playbook.yml"
+            ansible-playbook -v -e xcode_path="${XCODE_PATH}" --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./xcode-version-map-files-playbook.yml"
 
   provision-xamarin-vm:
     description: |-
@@ -77,4 +77,4 @@ workflows:
             #!/bin/bash
             set -e
             set -x
-            ansible-playbook --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./xamarin-playbook.yml"
+            ansible-playbook -v --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./xamarin-playbook.yml"
