@@ -2,7 +2,7 @@
 
 * `wine` and `xquartz` are pre-installed now
 
-## 2016_02_10_1
+## 2016_01_28_1
 
 * `carthage` is now pre-installed
 
