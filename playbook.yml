@@ -141,12 +141,7 @@
     - name: run brew installer script
       script: installers/install_brew.sh creates=/usr/local/bin/brew
     - homebrew: update_homebrew=yes upgrade_all=no
-    # Tap some brews
-    - homebrew_taps:
-      - caskroom/cask
     # brew some commands
-    - homebrew_cask: name=xquartz state=present
-    - homebrew: name=wine state=present
     - homebrew: name=git state=present
     - homebrew: name=wget state=present
     - homebrew: name=mercurial state=present
@@ -158,6 +153,10 @@
     - homebrew: name=flow state=present
     - homebrew: name=tree state=present
     - homebrew: name=carthage state=present
+    - name: Install xquartz
+      homebrew_cask: name=xquartz state=present
+    - name: Install wine
+      homebrew: name=wine state=present
 
     # Ruby
     # - homebrew: name=ruby state=present
