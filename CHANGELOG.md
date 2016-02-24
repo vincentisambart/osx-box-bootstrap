@@ -1,3 +1,9 @@
+## 2016_02_24_1
+
+* `wine` temporarily removed from this version. There's an ongoing issue with
+  one of its dependency which downloads from http://www.freedesktop.org/ - the
+  site is down for more than 5 hours now.
+
 ## 2016_02_10_1
 
 * `wine` and `xquartz` are pre-installed now

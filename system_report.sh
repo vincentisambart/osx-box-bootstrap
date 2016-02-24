@@ -43,7 +43,7 @@ ver_line="$(watchman --version)" ;                echo "* watchman: $ver_line"
 ver_line="$(flow version)" ;                      echo "* flow: $ver_line"
 ver_line="$(tree --version)" ;                    echo "* tree: $ver_line"
 ver_line="$(carthage version)" ;                  echo "* carthage: $ver_line"
-ver_line="$(wine --version)" ;                    echo "* wine: $ver_line"
+# ver_line="$(wine --version)" ;                    echo "* wine: $ver_line"
 
 echo
 echo "--- Bitrise CLI tool versions"
