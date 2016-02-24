@@ -1,3 +1,7 @@
+## 2016_02_24_2
+
+* `wine`: http://www.freedesktop.org/ is alive again, `wine` install went through.
+
 ## 2016_02_24_1
 
 * `wine` temporarily removed from this version. There's an ongoing issue with

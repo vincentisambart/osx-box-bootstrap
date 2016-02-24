@@ -155,8 +155,8 @@
     - homebrew: name=carthage state=present
     - name: Install xquartz
       homebrew_cask: name=xquartz state=present
-    # - name: Install wine
-    #   homebrew: name=wine state=present
+    - name: Install wine
+      homebrew: name=wine state=present
 
     # Ruby
     # - homebrew: name=ruby state=present
