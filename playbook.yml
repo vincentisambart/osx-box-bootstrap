@@ -157,6 +157,8 @@
       homebrew_cask: name=xquartz state=present
     - name: Install wine
       homebrew: name=wine state=present
+    - name: Install java
+      homebrew_cask: name=java state=present
 
     # Ruby
     # - homebrew: name=ruby state=present
@@ -168,12 +170,6 @@
         creates: /usr/local/Cellar/ruby/2.2.4/bin/ruby
     # make sure the symlink exists
     - shell: ls -alh /usr/local/bin/ruby
-
-    # Java
-    # - homebrew: name=java state=present
-    #  the latest version
-    - shell: bash -l -c "brew tap caskroom/cask"
-    - shell: bash -l -c "brew install Caskroom/cask/java"
 
     ## Go
     # Gopath is $HOME/go
