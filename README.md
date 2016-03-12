@@ -28,6 +28,12 @@ Pull Request, adding your changes to the `playbook.yml` ([Ansible](http://docs.a
 *Please also add* a related test/report to the `system_report.sh` file,
 which is used to test & list the pre-installed tools.
 
+If you want to add a **weekly cache update** script, you should do
+that in `weekly-cache-update-playbook.yml`. This should **not** change any
+pre-installed tool version, nor should it install any new tool; the
+weekly cache update should only update already installed tools' caches,
+for example the `CocoaPods` or `brew` spec caches.
+
 When a new version of this stack is available on [bitrise.io](https://www.bitrise.io)
 we'll run `system_report.sh` and post the result into
 the [bitrise.io GitHub repository](https://github.com/bitrise-io/bitrise.io), under the `system_reports` folder.

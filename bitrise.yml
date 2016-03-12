@@ -78,3 +78,20 @@ workflows:
             set -e
             set -x
             ansible-playbook -v --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./xamarin-playbook.yml"
+
+  # --- Weekly Cache Update ---
+  perform-weekly-cache-update:
+    description: |-
+      Runs `ansible` with the `weekly-cache-update-playbook.yml` playbook,
+      to update the pre-installed tools' caches, then it shuts down
+      the related virtual machines.
+    envs:
+      - INVENTORY_PTH: ./_tmp/weekly-update-inventory
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -e
+            set -x
+            ansible-playbook -i "$INVENTORY_PTH" --private-key ./vagrant-insecure_private_key "./weekly-cache-update-playbook.yml"

@@ -1,0 +1,35 @@
+---
+#
+# Ansible playbook to prepare a Bitrise OS X VM/box, used through vagrant
+#
+
+- hosts: all
+  # accelerate: true
+  remote_user: vagrant
+  become_method: sudo
+  any_errors_fatal: True
+  vars:
+    - ansible_sudo_pass: vagrant
+    - param_user: vagrant
+  tasks:
+    # ----------------------------------------
+    # --- pre-installed tool cache updates ---
+    # ----------------------------------------
+
+    - name: "Bitrise CLI: stepman cache update"
+      shell: bash -l -c "stepman update"
+
+    - name: "brew update"
+      shell: bash -l -c "brew update"
+
+    - name: "CocoaPods: pod setup"
+      shell: bash -l -c "pod setup"
+
+    # ------------------------
+    # --- shut down the VM ---
+    # ------------------------
+    - name: Shut down
+      shell: sleep 2 && sudo shutdown -h now "Caches updated"
+      async: 1
+      poll: 0
+      ignore_errors: true
