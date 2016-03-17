@@ -137,10 +137,6 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo "* Xamarin.iOS"
   echo $(/Developer/MonoTouch/usr/bin/mtouch --version)
   echo
-  echo "--- Java"
-  echo
-  echo $(java -version)
-  echo
   echo "--- Android"
   echo
   echo "* ANDROID_HOME:"
