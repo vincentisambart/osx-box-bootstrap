@@ -157,6 +157,8 @@
       homebrew_cask: name=xquartz state=present
     - name: Install wine
       homebrew: name=wine state=present
+    - name: Install java
+      homebrew_cask: name=java state=present
 
     # Ruby
     # - homebrew: name=ruby state=present
