@@ -1,3 +1,8 @@
+## 2016_03_17_1
+
+* `java` is now pre-installed - thanks @izhilenkov! 🙌
+* `NUnit` updated to `3.2`
+
 ## 2016_02_24_2
 
 * `wine`: http://www.freedesktop.org/ is alive again, `wine` install went through.

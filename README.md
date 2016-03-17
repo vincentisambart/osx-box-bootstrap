@@ -219,7 +219,6 @@ Update Xamarin Components
 Install Xamarin Platform on the VM
 
 * from: https://xamarin.com/platform
-* don't install the Xamarin.Mac component for now
 * launch Xamarin Studio and set it to "don't check for updates"
   * Menu bar : Xamarin Studio -> Check for updates -> uncheck
 * close Xamarin Studio
