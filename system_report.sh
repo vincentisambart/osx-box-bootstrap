@@ -124,13 +124,37 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo
   echo "=== Xamarin specific ==================="
   echo
+  echo "--- Xamarin"
+  echo
+  echo "* Xamarin Studio"
+  cat "/Applications/Xamarin Studio.app/Contents/Resources/lib/monodevelop/bin/buildinfo"
+  echo
+  echo "* Xamarin.Android"
+  echo $(/Developer/MonoAndroid/usr/bin/mandroid --version)
+  echo
+  echo "* Xamarin.iOS"
+  echo $(/Developer/MonoTouch/usr/bin/mtouch --version)
+  echo
+  echo "--- Java"
+  echo
+  echo $(java -version)
+  echo
   echo "--- Android"
+  echo
+  echo "* ANDROID_HOME:"
+  ls -alh ${ANDROID_HOME}
+  echo
+  echo "* platform-tools:"
+  ls -1 ${ANDROID_HOME}/platform-tools
   echo
   echo "* build-tools:"
   ls -1 ${ANDROID_HOME}/build-tools
   echo
   echo "* extras:"
   tree -L 2 ${ANDROID_HOME}/extras
+  echo
+  echo "* extra-android-support package version:"
+  cat ${ANDROID_HOME}/extras/android/support/source.properties | grep 'Pkg.Revision='
   echo
   echo "* platforms:"
   ls -1 ${ANDROID_HOME}/platforms

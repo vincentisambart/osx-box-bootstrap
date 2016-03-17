@@ -204,7 +204,19 @@ quite some time.*
 
 ### Xamarin notes
 
-Install Xamarin Platform
+Update Xamarin components in this repository
+
+Update NUnit
+* From: http://www.nunit.org/index.php?p=download
+* To: `xamarin/nunit`
+* Latest Version: 3.2
+* Update NUNIT_PATH in `profiles/xamarin_profile`
+
+Update Xamarin Components
+* From: https://components.xamarin.com/submit/xpkg
+* To: `xamarin/xamarin-component`
+
+Install Xamarin Platform on the VM
 
 * from: https://xamarin.com/platform
 * don't install the Xamarin.Mac component for now
