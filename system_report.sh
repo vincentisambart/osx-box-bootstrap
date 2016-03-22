@@ -22,7 +22,7 @@ echo "=== Pre-installed tool versions ========"
 ver_line="$(go version)" ;                        echo "* Go: $ver_line"
 ver_line="$(ruby --version)" ;                    echo "* Ruby: $ver_line"
 ver_line="$(python --version 2>&1 >/dev/null)" ;  echo "* Python: $ver_line"
-ver_line="$(java -version)" ;                     echo "* Java: $ver_line"
+ver_line="$(java -version 2>&1 >/dev/null)" ;     echo "* Java: $ver_line"
 
 
 echo
