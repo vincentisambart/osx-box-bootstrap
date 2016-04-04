@@ -1,3 +1,8 @@
+## 2016_04_04_1
+
+* `Build tool 23.0.3` added to the Xamarin stack
+* `NUnit 2.6.4` added to the stack
+
 ## 2016_03_17_1
 
 * `java` is now pre-installed - thanks @izhilenkov! 🙌
