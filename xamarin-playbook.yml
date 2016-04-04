@@ -50,6 +50,7 @@
 
     # Build tools
     - shell: echo y | android update sdk --no-ui --all --filter build-tools-24.0.0-preview
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
     - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.2
     - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.1
     - shell: echo y | android update sdk --no-ui --all --filter build-tools-22.0.1
