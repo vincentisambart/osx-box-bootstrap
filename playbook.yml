@@ -247,6 +247,16 @@
     - shell: bash -l -c "xcode-select --switch {{ xcode_path }}"
       become: yes
 
+
+    #
+    # --- CLEANUP ---
+
+    # Remove tmp / test dirs inside the HOME directory
+    - file: path="/Users/{{ param_user }}/{{ item.fold_path }}"
+        state=absent
+      with_items:
+        - { fold_path: 'Library/Developer/Xcode/DerivedData' }
+
     #
     # Final debug prints
     - debug: msg="---> Finished with automatic stuff - but here's some things you have to do manually:"
