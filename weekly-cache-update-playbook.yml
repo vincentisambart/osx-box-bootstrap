@@ -26,8 +26,10 @@
     # ----------------------------------------
     # --- Bitrise CLI tools ---
     # ----------------------------------------
+    - name: "bitrise CLI: cleanup previous tool versions"
+      shell: bash -l -c "rm /usr/local/bin/bitrise /usr/local/bin/stepman /usr/local/bin/envman"
     - name: "bitrise CLI: download"
-      shell: bash -l -c "curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.3.0/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise"
+      shell: bash -l -c "curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.3.1/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise"
     - file: path=/usr/local/bin/bitrise mode="u=rwx,g=rx,o=rx"
     - shell: bash -l -c "bitrise --version"
     - shell: bash -l -c "bitrise setup --minimal"
