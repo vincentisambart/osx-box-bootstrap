@@ -30,9 +30,12 @@
       shell: bash -l -c "rm /usr/local/bin/bitrise /usr/local/bin/stepman /usr/local/bin/envman"
     - name: "bitrise CLI: download"
       shell: bash -l -c "curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.3.1/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise"
-    - file: path=/usr/local/bin/bitrise mode="u=rwx,g=rx,o=rx"
-    - shell: bash -l -c "bitrise --version"
-    - shell: bash -l -c "bitrise setup --minimal"
+    - name: "Make the bitrise CLI executable"
+      file: path=/usr/local/bin/bitrise mode="u=rwx,g=rx,o=rx"
+    - name: "Bitrise CLI test -version"
+      shell: bash -l -c "bitrise --version"
+    - name: "Bitrise CLI - setup -minimal"
+      shell: bash -l -c "bitrise setup --minimal"
     # setup the default StepLib collection to stepman, for a pre-warmed
     #  cache for the StepLib
     - name: "stepman: init"
