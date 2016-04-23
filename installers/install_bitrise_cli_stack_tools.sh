@@ -9,7 +9,7 @@
 	# bitrise
 	echo
 	echo "[bitrise] Downloading..."
-	curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.3.1/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise
+	curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.3.2/bitrise-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise
 	echo "[bitrise] chmod"
 	chmod +x /usr/local/bin/bitrise
 	echo "[bitrise] setup"
@@ -25,7 +25,7 @@
 	# bitrise-bridge
 	echo
 	echo "[bitrise-bridge] Downloading..."
-	curl -fL https://github.com/bitrise-tools/bitrise-bridge/releases/download/0.9.7/bitrise-bridge-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise-bridge
+	curl -fL https://github.com/bitrise-tools/bitrise-bridge/releases/download/0.9.8/bitrise-bridge-$(uname -s)-$(uname -m) > /usr/local/bin/bitrise-bridge
 	echo "[bitrise-bridge] chmod"
 	chmod +x /usr/local/bin/bitrise-bridge
 	echo "[bitrise-bridge] version"
