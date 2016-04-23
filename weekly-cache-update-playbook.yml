@@ -62,12 +62,3 @@
         state=absent
       with_items:
         - { fold_path: 'Library/Developer/Xcode/DerivedData' }
-
-    # ------------------------
-    # --- shut down the VM ---
-    # ------------------------
-    - name: Shut down
-      shell: sleep 2 && sudo shutdown -h now "Caches updated"
-      async: 1
-      poll: 0
-      ignore_errors: true
