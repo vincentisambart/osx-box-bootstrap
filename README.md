@@ -196,6 +196,8 @@ quite some time.*
 
 * Now you can run the actual VM environment setup:
   * with bitrise CLI: `bitrise run provision-vm`
+* To prepare the required tools & caches, run: `bitrise run perform-weekly-cache-update`
+  * This is the step which actually installs the Bitrise CLI, as well as prepares it's caches
 * Right now we have to run one more thing, to create the deprecated xcode version mapping files:
   * with bitrise CLI: `bitrise run DEPRECATED-create-xcode-version-mapping`
   * This'll be removed in the near future, but right now required for backward compatibility

@@ -16,6 +16,8 @@ trigger_map:
 - pattern: step/2
   workflow: provision-vm
 - pattern: step/3
+  workflow: perform-weekly-cache-update
+- pattern: step/4
   workflow: DEPRECATED-create-xcode-version-mapping
 - pattern: step/xamarin
   workflow: provision-xamarin-vm
@@ -81,10 +83,17 @@ workflows:
 
   # --- Weekly Cache Update ---
   perform-weekly-cache-update:
+    steps:
+    - script:
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+            ansible-playbook -v --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./weekly-cache-update-playbook.yml"
+  perform-weekly-cache-update-with-inventory:
     description: |-
       Runs `ansible` with the `weekly-cache-update-playbook.yml` playbook,
-      to update the pre-installed tools' caches, then it shuts down
-      the related virtual machines.
+      to update the pre-installed tools' caches
     envs:
       - INVENTORY_PTH: ./_tmp/weekly-update-inventory
     steps:
@@ -92,6 +101,5 @@ workflows:
         inputs:
         - content: |-
             #!/bin/bash
-            set -e
-            set -x
+            set -ex
             ansible-playbook -i "$INVENTORY_PTH" --private-key ./vagrant-insecure_private_key "./weekly-cache-update-playbook.yml"

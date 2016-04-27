@@ -1,3 +1,12 @@
+## 2016_04_26_1
+
+* Bit of reorganization: after `bitrise run provision-vm` you now have to run `bitrise run perform-weekly-cache-update`,
+  to not to duplicate tasks/scripts between the initial setup and the weekly cache updates.
+* `bitrise` (CLI) : `1.3.2`
+* `bitrise-bridge` : `0.9.8`
+* Cleanup: make sure that `~/Library/Developer/Xcode/DerivedData` is empty before saving the virtual machine image
+
+
 ## 2016_04_04_1
 
 * `Build tool 23.0.3` added to the Xamarin stack
