@@ -1,3 +1,8 @@
+## 2016_04_27_1
+
+* `bitrise` (CLI) : `1.3.3`
+
+
 ## 2016_04_26_1
 
 * Bit of reorganization: after `bitrise run provision-vm` you now have to run `bitrise run perform-weekly-cache-update`,
