@@ -122,7 +122,6 @@ echo "========================================"
 echo
 
 if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
-  brew install tree
   echo
   echo "=== Xamarin specific ==================="
   echo
@@ -131,11 +130,14 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo "* Xamarin Studio"
   cat "/Applications/Xamarin Studio.app/Contents/Resources/lib/monodevelop/bin/buildinfo"
   echo
+  echo "* Mono"
+  mono --version
+  echo
   echo "* Xamarin.Android"
-  echo $(/Developer/MonoAndroid/usr/bin/mandroid --version)
+  /Developer/MonoAndroid/usr/bin/mandroid --version
   echo
   echo "* Xamarin.iOS"
-  echo $(/Developer/MonoTouch/usr/bin/mtouch --version)
+  /Developer/MonoTouch/usr/bin/mtouch --version
   echo
   echo "--- Android"
   echo
