@@ -134,7 +134,7 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   mono --version
   echo
   echo "* Xamarin.Android"
-  /Developer/MonoAndroid/usr/bin/mandroid --version
+  cat /Developer/MonoAndroid/usr/Version
   echo
   echo "* Xamarin.iOS"
   /Developer/MonoTouch/usr/bin/mtouch --version
