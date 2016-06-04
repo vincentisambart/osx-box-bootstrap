@@ -29,53 +29,53 @@
 
     # Install Android SDKs and other build packages
     # Other tools and resources of Android SDK
-    - shell: echo y | android update sdk --no-ui --all --filter platform-tools
-    - shell: echo y | android update sdk --no-ui --all --filter extra-android-support
+    - shell: echo y | android update sdk --no-ui --all --filter platform-tools | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter extra-android-support | grep 'package installed'
 
     # SDKs
     # Please keep these in descending order!
-    - shell: echo y | android update sdk --no-ui --all --filter android-N
-    - shell: echo y | android update sdk --no-ui --all --filter android-23
-    - shell: echo y | android update sdk --no-ui --all --filter android-22
-    - shell: echo y | android update sdk --no-ui --all --filter android-21
-    - shell: echo y | android update sdk --no-ui --all --filter android-20
-    - shell: echo y | android update sdk --no-ui --all --filter android-19
-    - shell: echo y | android update sdk --no-ui --all --filter android-17
-    - shell: echo y | android update sdk --no-ui --all --filter android-15
-    - shell: echo y | android update sdk --no-ui --all --filter android-10
+    - shell: echo y | android update sdk --no-ui --all --filter android-N | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter android-23 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter android-22 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter android-21 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter android-20 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter android-19 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter android-17 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter android-15 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter android-10 | grep 'package installed'
 
     # build tools
     # Please keep these in descending order!
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-24.0.0-preview
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.2
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.1
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-22.0.1
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-21.1.2
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-20.0.0
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-19.1.0
-    - shell: echo y | android update sdk --no-ui --all --filter build-tools-17.0.0
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-24.0.0-preview | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.3 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.2 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.1 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-22.0.1 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-21.1.2 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-20.0.0 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-19.1.0 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter build-tools-17.0.0 | grep 'package installed'
 
     # Android System Images, for emulators
     # Please keep these in descending order!
-    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-23
-    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-22
-    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-21
-    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-19
-    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-17
-    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-16
-    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-15
+    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-23 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-22 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-21 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-19 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-17 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-16 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-15 | grep 'package installed'
 
     # Extras
-    - shell: echo y | android update sdk --no-ui --all --filter extra-android-m2repository
-    - shell: echo y | android update sdk --no-ui --all --filter extra-google-m2repository
-    - shell: echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
+    - shell: echo y | android update sdk --no-ui --all --filter extra-android-m2repository | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter extra-google-m2repository | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter extra-google-google_play_services | grep 'package installed'
 
     # google apis
     # Please keep these in descending order!
-    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-23
-    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-22
-    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-21
+    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-23 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-22 | grep 'package installed'
+    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-21 | grep 'package installed'
 
     #
     # Setup Bitrise specific folders
