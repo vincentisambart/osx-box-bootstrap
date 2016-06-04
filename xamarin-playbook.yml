@@ -32,12 +32,8 @@
     - shell: echo y | android update sdk --no-ui --all --filter platform-tools
     - shell: echo y | android update sdk --no-ui --all --filter extra-android-support
 
-    # google apis
-    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-23
-    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-22
-    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-21
-
     # SDKs
+    # Please keep these in descending order!
     - shell: echo y | android update sdk --no-ui --all --filter android-N
     - shell: echo y | android update sdk --no-ui --all --filter android-23
     - shell: echo y | android update sdk --no-ui --all --filter android-22
@@ -48,7 +44,8 @@
     - shell: echo y | android update sdk --no-ui --all --filter android-15
     - shell: echo y | android update sdk --no-ui --all --filter android-10
 
-    # Build tools
+    # build tools
+    # Please keep these in descending order!
     - shell: echo y | android update sdk --no-ui --all --filter build-tools-24.0.0-preview
     - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
     - shell: echo y | android update sdk --no-ui --all --filter build-tools-23.0.2
@@ -60,6 +57,7 @@
     - shell: echo y | android update sdk --no-ui --all --filter build-tools-17.0.0
 
     # Android System Images, for emulators
+    # Please keep these in descending order!
     - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-23
     - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-22
     - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-21
@@ -68,10 +66,16 @@
     - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-16
     - shell: echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-15
 
-    # Android System Images, for emulators
+    # Extras
     - shell: echo y | android update sdk --no-ui --all --filter extra-android-m2repository
     - shell: echo y | android update sdk --no-ui --all --filter extra-google-m2repository
     - shell: echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
+
+    # google apis
+    # Please keep these in descending order!
+    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-23
+    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-22
+    - shell: echo y | android update sdk --no-ui --all --filter addon-google_apis-google-21
 
     #
     # Setup Bitrise specific folders
