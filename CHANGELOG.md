@@ -1,3 +1,10 @@
+## 2016_06_15_3
+
+* `xcode-version-map-files-playbook` / `DEPRECATED-create-xcode-version-mapping` removed. This was deprecated
+  for a long time now, and it had no purpose on the new Stacks / recommended environments, where only one Xcode
+  is available, at it's canonical location (in `/Applications/`)
+
+
 ## 2016_06_15_2
 
 * `ruby` : switched back from our pinned Ruby 2.2.4 to the latest `brew` installed ruby version.

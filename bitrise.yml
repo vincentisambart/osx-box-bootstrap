@@ -17,8 +17,6 @@ trigger_map:
   workflow: provision-vm
 - pattern: step/3
   workflow: perform-weekly-cache-update
-- pattern: step/4
-  workflow: DEPRECATED-create-xcode-version-mapping
 - pattern: step/xamarin
   workflow: provision-xamarin-vm
 
@@ -53,19 +51,6 @@ workflows:
             set -x
             echo " * VM_BUILD_BOX_VERSION: $VM_BUILD_BOX_VERSION"
             ansible-playbook -v -e bitrise_box_version="${VM_BUILD_BOX_VERSION}" -e xcode_path="${XCODE_PATH}" --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./playbook.yml"
-
-  DEPRECATED-create-xcode-version-mapping:
-    description: |-
-      DEPRECATED: will be removed in the near future, as we don't pre-install multiple Xcode versions
-      in the same VM anymore (mainly because of incompatibility issues).
-    steps:
-    - script:
-        inputs:
-        - content: |-
-            #!/bin/bash
-            set -e
-            set -x
-            ansible-playbook -v -e xcode_path="${XCODE_PATH}" --private-key ./vagrant-insecure_private_key -i "${VM_BUILD_IP}", "./xcode-version-map-files-playbook.yml"
 
   provision-xamarin-vm:
     description: |-
