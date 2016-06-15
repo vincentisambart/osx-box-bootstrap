@@ -1,3 +1,10 @@
+## 2016_06_15_1
+
+* `wine` removed. We really wanted to keep it around, but so far we had more issues with `wine` than we had with any other tool..
+  We decided to remove it for now as it breaks the install/provision process - if the new Xcode 8 (beta) is installed on the system
+  `wine` fails to install.
+
+
 ## 2016_06_11_1
 
 * `bitrise` (CLI): `1.3.5`
