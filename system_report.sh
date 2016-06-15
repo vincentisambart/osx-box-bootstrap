@@ -51,6 +51,13 @@ ver_line="$(flow version)" ;                      echo "* flow: $ver_line"
 ver_line="$(tree --version)" ;                    echo "* tree: $ver_line"
 ver_line="$(carthage version)" ;                  echo "* carthage: $ver_line"
 
+# wine was removed, is not installed on new Stacks
+set +e
+ver_line="$(wine --version)" ;                    echo "* wine: $ver_line"
+if [[ "${IS_IGNORE_ERRORS}" != "true" ]] ; then
+set -e
+fi
+
 echo
 echo "--- Bitrise CLI tool versions"
 ver_line="$(bitrise --version)" ;                 echo "* bitrise: $ver_line"
