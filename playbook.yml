@@ -157,15 +157,7 @@
       homebrew_cask: name=java state=present
 
     # Ruby
-    # - homebrew: name=ruby state=present
-    # for now use our pinned 2.2.4 version, as CocoaPods doesn't work with
-    #  the latest, 2.3.0 Ruby
-    - shell: bash -l -c "brew tap bitrise-io/homebrew-pinned"
-    - shell: bash -l -c "brew install bitrise-io/homebrew-pinned/ruby"
-      args:
-        creates: /usr/local/Cellar/ruby/2.2.4/bin/ruby
-    # make sure the symlink exists
-    - shell: ls -alh /usr/local/bin/ruby
+    - homebrew: name=ruby state=present
 
     ## Go
     # Gopath is $HOME/go

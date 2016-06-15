@@ -1,3 +1,9 @@
+## 2016_06_15_2
+
+* `ruby` : switched back from our pinned Ruby 2.2.4 to the latest `brew` installed ruby version.
+  CocoaPods 1.x should properly work with the new `ruby` version now. 
+
+
 ## 2016_06_15_1
 
 * `wine` removed. We really wanted to keep it around, but so far we had more issues with `wine` than we had with any other tool..
