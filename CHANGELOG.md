@@ -1,3 +1,8 @@
+## 2016_06_18_1
+
+* `android-24` is no longer preview - package names were changed
+
+
 ## 2016_06_15_3
 
 * `xcode-version-map-files-playbook` / `DEPRECATED-create-xcode-version-mapping` removed. This was deprecated
@@ -8,7 +13,7 @@
 ## 2016_06_15_2
 
 * `ruby` : switched back from our pinned Ruby 2.2.4 to the latest `brew` installed ruby version.
-  CocoaPods 1.x should properly work with the new `ruby` version now. 
+  CocoaPods 1.x should properly work with the new `ruby` version now.
 
 
 ## 2016_06_15_1
