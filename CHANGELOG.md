@@ -1,3 +1,8 @@
+## UPCOMING
+
+* `git config --global user.email` and `git config --global user.name`, for easier tag publishing (or other git push operation) 
+
+
 ## 2016_06_18_1
 
 * `android-24` is no longer preview - package names were changed

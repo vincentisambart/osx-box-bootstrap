@@ -180,6 +180,12 @@
     - shell: bash -l -c "pod setup"
       when: is_incremental_setup|default(false) == false
 
+    # Git config
+    - name: "git config user.email"
+      shell: bash -l -c 'git config --global user.email "letsconnect@bitrise.io"'
+    - name: "git config user.name"
+      shell: bash -l -c 'git config --global user.name "Bitrise Bot"'
+
     #
     # Setup Bitrise specific folders
     #
