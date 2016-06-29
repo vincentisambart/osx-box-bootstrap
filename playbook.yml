@@ -186,6 +186,12 @@
     - name: "git config user.name"
       shell: bash -l -c 'git config --global user.name "Bitrise Bot"'
 
+    # Git LFS
+    - name: "brew install git lfs"
+      homebrew: name=git-lfs state=present
+    - name: "run git lfs install"
+      shell: bash -l -c 'git lfs install'
+
     #
     # Setup Bitrise specific folders
     #

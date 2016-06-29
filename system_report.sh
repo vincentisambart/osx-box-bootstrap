@@ -32,12 +32,15 @@ ver_line="$(java -version 2>&1 >/dev/null)" ;     echo "* Java: $ver_line"
 
 echo
 ver_line="$(git --version)" ;                     echo "* git: $ver_line"
+ver_line="$(git lfs version)" ;                   echo "* git lfs: $ver_line"
 ver_line="$(hg --version | grep version)" ;       echo "* mercurial/hg: $ver_line"
 ver_line="$(curl --version | grep curl)" ;        echo "* curl: $ver_line"
 ver_line="$(wget --version | grep 'GNU Wget')" ;  echo "* wget: $ver_line"
 ver_line="$(rsync --version | grep version)" ;    echo "* rsync: $ver_line"
 ver_line="$(unzip -v | head -n 1)" ;              echo "* unzip: $ver_line"
+ver_line="$(zip -v | head -n 2 | tail -n 1)";     echo "* zip: $ver_line"
 ver_line="$(tar --version | head -n 1)" ;         echo "* tar: $ver_line"
+ver_line="$(tree --version)" ;                    echo "* tree: $ver_line"
 
 echo
 ver_line="$(brew --version)" ;                    echo "* brew: $ver_line"
@@ -48,7 +51,6 @@ ver_line="$(ansible --version | grep ansible)" ;  echo "* Ansible: $ver_line"
 ver_line="$(gtimeout --version | grep 'timeout')" ;  echo "* gtimeout: $ver_line"
 ver_line="$(watchman --version)" ;                echo "* watchman: $ver_line"
 ver_line="$(flow version)" ;                      echo "* flow: $ver_line"
-ver_line="$(tree --version)" ;                    echo "* tree: $ver_line"
 ver_line="$(carthage version)" ;                  echo "* carthage: $ver_line"
 
 # wine was removed, is not installed on new Stacks
