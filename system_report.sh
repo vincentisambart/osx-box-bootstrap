@@ -4,6 +4,8 @@ set -e
 if [[ "${IS_IGNORE_ERRORS}" == "true" ]] ; then
 echo " (i) Ignore Errors: enabled"
 set +e
+else
+echo " (i) Ignore Errors: disabled"
 fi
 
 echo
