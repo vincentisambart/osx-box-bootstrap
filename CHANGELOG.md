@@ -1,7 +1,7 @@
-## UPCOMING
+## 2016_07_02_1
 
 * `git config --global user.email` and `git config --global user.name`, for easier tag publishing (or other git push operation)
-* [git-lfs](https://git-lfs.github.com/) pre-installed 
+* [git-lfs](https://git-lfs.github.com/) pre-installed
 
 
 ## 2016_06_18_1
