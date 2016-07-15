@@ -29,6 +29,8 @@ echo "=== Pre-installed tool versions ========"
 ver_line="$(go version)" ;                        echo "* Go: $ver_line"
 ver_line="$(ruby --version)" ;                    echo "* Ruby: $ver_line"
 ver_line="$(python --version 2>&1 >/dev/null)" ;  echo "* Python: $ver_line"
+ver_line="$(node --version)" ;                    echo "* Node.js: $ver_line"
+ver_line="$(npm --version)" ;                     echo "* NPM: $ver_line"
 ver_line="$(java -version 2>&1 >/dev/null)" ;     echo "* Java: $ver_line"
 
 
@@ -47,8 +49,6 @@ ver_line="$(tree --version)" ;                    echo "* tree: $ver_line"
 echo
 ver_line="$(brew --version)" ;                    echo "* brew: $ver_line"
 ver_line="$(xctool --version)" ;                  echo "* xctool: $ver_line"
-ver_line="$(node --version)" ;                    echo "* Node.js: $ver_line"
-ver_line="$(npm --version)" ;                     echo "* NPM: $ver_line"
 ver_line="$(ansible --version | grep ansible)" ;  echo "* Ansible: $ver_line"
 ver_line="$(gtimeout --version | grep 'timeout')" ;  echo "* gtimeout: $ver_line"
 ver_line="$(watchman --version)" ;                echo "* watchman: $ver_line"
