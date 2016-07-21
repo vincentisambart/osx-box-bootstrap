@@ -1,6 +1,6 @@
 ## `v2016_07_21_1`
 
-* Xamarin specific: added new preinstalled packages: `build-tools-24.0.1` & `sys-img-armeabi-v7a-android-24`
+* Xamarin specific: added new preinstalled Android packages: `build-tools-24.0.1` & `sys-img-armeabi-v7a-android-24`
 * preinstalled `imagemagick`
 * preinstalled `ghostscript`
 
