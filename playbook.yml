@@ -153,6 +153,9 @@
     - homebrew: name=flow state=present
     - homebrew: name=tree state=present
     - homebrew: name=carthage state=present
+    - homebrew: name=imagemagick state=present
+    - homebrew: name=ghostscript state=present
+    
     - name: Install java
       homebrew_cask: name=java state=present
 
