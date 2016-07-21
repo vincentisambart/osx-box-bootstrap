@@ -1,8 +1,8 @@
 ## `v2016_07_21_1`
 
 * Xamarin specific: added new preinstalled Android packages: `build-tools-24.0.1` & `sys-img-armeabi-v7a-android-24`
-* preinstalled `imagemagick` - thanks to [@samdods](https://github.com/bitrise-io/osx-box-bootstrap/pull/13)!
-* preinstalled `ghostscript` - thanks to [@samdods](https://github.com/bitrise-io/osx-box-bootstrap/pull/13)!
+* preinstalled `imagemagick` - thanks to [@samdods' PR](https://github.com/bitrise-io/osx-box-bootstrap/pull/13)!
+* preinstalled `ghostscript` - thanks to [@samdods' PR](https://github.com/bitrise-io/osx-box-bootstrap/pull/13)!
 
 
 ## `v2016_07_14_1`
