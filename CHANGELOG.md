@@ -1,3 +1,10 @@
+## `v2016_07_21_1`
+
+* Xamarin specific: added new preinstalled packages: `build-tools-24.0.1` & `sys-img-armeabi-v7a-android-24`
+* preinstalled `imagemagick`
+* preinstalled `ghostscript`
+
+
 ## `v2016_07_14_1`
 
 * `bitrise` (CLI): `1.3.6`
