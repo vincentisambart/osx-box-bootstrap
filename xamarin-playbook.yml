@@ -13,9 +13,18 @@
     #
     # Required param checks
 
+    
     #
     # Setup profiles
-    # this is the main Xamarin profile, includes
+
+    # Make sure that the latest .bashrc is in place (which
+    # references / loads the xamarin_profile)
+    - name: setup .bashrc
+      copy: src=profiles/bashrc
+        dest="/Users/{{ param_user }}/.bashrc"
+        owner="{{ param_user }}"
+        mode=0600
+    # The main Xamarin profile, includes
     #  the Xamarin specific environments
     - name: setup xamarin_profile
       copy: src=profiles/xamarin_profile
