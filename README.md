@@ -223,6 +223,8 @@ Install Xamarin Platform on the VM
 * from: https://xamarin.com/platform
 * launch Xamarin Studio and set it to "don't check for updates"
   * Menu bar : Xamarin Studio -> Check for updates -> uncheck
+* set Log level
+  * Menu bar : Xamarin Studio -> Preferences -> Build -> Log verbosity: Quiet
 * close Xamarin Studio
 
 To add the Xamarin specific bits you should also run this,
