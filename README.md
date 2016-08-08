@@ -203,6 +203,9 @@ quite some time.*
 
 ### Xamarin notes
 
+_Note: the Xamarin stack can be built on top of an already provisioned Xcode stack/template.
+Just clone the provisioned Xcode template, do the Xamarin specific bits, and that's all._
+
 Update Xamarin components in this repository
 
 Update NUnit
