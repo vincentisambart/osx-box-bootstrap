@@ -162,6 +162,7 @@ Once installed:
 * Disable the Screen Saver
 * Check & wait for Spotlight to finish indexing
 * Restart
+    * Disable "Reopen windows when logged back in"
 
 ## Provisioning
 
