@@ -12,13 +12,13 @@ Table of Content:
 
 0. Request a tool to be pre-installed
 1. Create VM & OS X installation
-  * how to create the base VM & install a vanilla OS X
+    * how to create the base VM & install a vanilla OS X
 2. Provisioning
-  * how to prepare the required OS X environment, with preinstalled tools,
-    based on a vanilla OS X installation
+    * how to prepare the required OS X environment, with preinstalled tools,
+      based on a vanilla OS X installation
 3. Packaging
-  * how to save the create VM in a `vagrant` ready box format, which can then
-    be simply used with `vagrant`
+    * how to save the create VM in a `vagrant` ready box format, which can then
+      be simply used with `vagrant`
 
 
 ## Request a tool to be pre-installed
@@ -42,36 +42,38 @@ the [bitrise.io GitHub repository](https://github.com/bitrise-io/bitrise.io), un
 would fail there's probably no issue at all, we'll let you know
 if you have to change anything.*
 
+
 ## Create VM & OS X installation
 
 ### VMware vSphere specific
 
 * Create a new OS X VM
-  * 4 GB RAM
-  * 2 CPU
-    * Allow: Hardware virtualization - expand the CPU options, and enable this option
-  * about 100 GB disk space
+    * 4 GB RAM
+    * 2 CPU
+        * Allow: `Hardware virtualization` - expand the CPU options, and enable this option
+    * about 200 GB disk space
 * Start the VM
 * Install OS X:
-  * OS X won't see the hard drive, you'll have to open Disk Utility (you can
-    find it in the menu bar of the OS X installer) and format the disk
-  * Select the 100 GB disk on the left side, and then Erase it
-  * Format: Mac OS Extended (Journaled)
-  * Name: Macintosh HD
-  * Clone Disk Utility, you should now be able to select this disk for the install.
-  * Follow the: OS X Install guide (common) section
+    * OS X won't see the hard drive, you'll have to open Disk Utility (you can
+      find it in the menu bar of the OS X installer) and format the disk
+    * Select the 200 GB disk on the left side, and then Erase it
+    * Format: Mac OS Extended (Journaled)
+    * Name: Macintosh HD
+    * Scheme: GUID Partition Map
+    * Close Disk Utility, you should now be able to select this disk for the install.
+    * Follow the: OS X Install guide (common) section
 * Wait for Spotlight indexing to finish
 * Shut down the VM and remove the OS X Installer ISO (cdrom)
 * Save it as a "vanilla box" (as a VM or even better, as a Template)
 * When preparing for a specific setup (e.g. Xcode version)
-  * clone this "vanilla box"
-  * update to the OS X version you want
-  * double check the "Once installed:" section of "OS X Install guide (common) section"
-    * in some cases OS X version update might turn off e.g. Remote Login!
-  * install the VMware Tools
-  * check and wait if Spotlight is indexing
-  * Save it as an environment specific "base box"
-  * Continue with Provisioning
+    * clone this "vanilla box"
+    * update to the OS X version you want
+    * double check the "Once installed:" section of "OS X Install guide (common) section"
+        * in some cases OS X version update might turn off e.g. Remote Login!
+    * install the VMware Tools
+    * check and wait if Spotlight is indexing
+    * Save it as an environment specific "base box"
+    * Continue with Provisioning
 
 
 ### Parallels specific [no longer maintained]
