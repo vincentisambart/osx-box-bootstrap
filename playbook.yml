@@ -180,7 +180,7 @@
     - shell: bash -l -c "bundle --version"
       when: is_incremental_setup|default(false) == false
     # GEMs: Cocoapods
-    - shell: bash -l -c "pod setup"
+    - shell: bash -l -c "pod setup || pod setup"
       when: is_incremental_setup|default(false) == false
 
     # Git config

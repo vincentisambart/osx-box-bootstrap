@@ -20,7 +20,7 @@
       shell: bash -l -c "brew update || brew update"
 
     - name: "CocoaPods: pod setup"
-      shell: bash -l -c "pod setup"
+      shell: bash -l -c "pod setup || pod setup"
 
 
     # ----------------------------------------
