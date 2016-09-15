@@ -214,7 +214,7 @@ Update Xamarin components in this repository
 Update NUnit
 * From: http://www.nunit.org/index.php?p=download
 * To: `xamarin/nunit`
-* Latest Version: 3.2
+* Latest Version: 3.4.1
 * Update NUNIT_PATH in `profiles/xamarin_profile`
 
 Update Xamarin Components
