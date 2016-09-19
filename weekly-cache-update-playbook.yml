@@ -12,6 +12,19 @@
     - ansible_sudo_pass: vagrant
     - param_user: vagrant
   tasks:
+
+    # ----------------------------------------
+    # --- Setup profiles ---
+    # ----------------------------------------
+
+    # Make sure that the latest .bashrc is in place (which
+    # references / loads the other profiles)
+    - name: setup .bashrc
+      copy: src=profiles/bashrc
+        dest="/Users/{{ param_user }}/.bashrc"
+        owner="{{ param_user }}"
+        mode=0600
+
     # ----------------------------------------
     # --- pre-installed tool cache updates ---
     # ----------------------------------------
