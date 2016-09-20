@@ -187,3 +187,14 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo "========================================"
   echo
 fi
+
+echo
+echo "=== Control tests ======================"
+# these things should pass;
+# e.g. testing the existence of specific paths
+# or whether ~/.bash_profile can be "source"-d in "set -e" mode
+set -e
+source $HOME/.bash_profile
+echo 'source $HOME/.bash_profile - PASSED'
+echo "========================================"
+echo
