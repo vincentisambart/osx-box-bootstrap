@@ -194,6 +194,7 @@ echo "=== Control tests ======================"
 # e.g. testing the existence of specific paths
 # or whether ~/.bash_profile can be "source"-d in "set -e" mode
 set -e
+echo 'source $HOME/.bash_profile ...'
 source $HOME/.bash_profile
 echo 'source $HOME/.bash_profile - PASSED'
 echo "========================================"
