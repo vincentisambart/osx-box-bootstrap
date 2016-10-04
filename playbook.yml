@@ -136,6 +136,10 @@
     - shell: softwareupdate --schedule off
       become: yes
 
+    # Install bundler for system Ruby
+    - shell: bash -l -c "sudo gem install bundler"
+      become: yes
+
     #
     # Install and update homebrew
     - name: run brew installer script
@@ -155,7 +159,7 @@
     - homebrew: name=carthage state=present
     - homebrew: name=imagemagick state=present
     - homebrew: name=ghostscript state=present
-    
+
     - name: Install java
       homebrew_cask: name=java state=present
 
