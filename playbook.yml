@@ -133,11 +133,13 @@
         mode=0600
 
     # Turn off automatic update
-    - shell: softwareupdate --schedule off
+    - name: Turn off macos automatic software updates
+      shell: softwareupdate --schedule off
       become: yes
 
     # Install bundler for system Ruby
-    - shell: bash -l -c "sudo gem install bundler"
+    - name: install bundler for system ruby
+      shell: bash -l -c "sudo gem install bundler"
       become: yes
 
     #
