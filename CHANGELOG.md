@@ -1,3 +1,9 @@
+## `v2016_10_04_1`
+
+* Install `bundler` for system Ruby
+* `build-tools-24.0.3` added to the Xamarin stack
+
+
 ## `v2016_09_14_1`
 
 * `bitrise` (CLI): `1.4.0`
