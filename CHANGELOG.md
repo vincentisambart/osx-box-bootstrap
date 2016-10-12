@@ -1,3 +1,8 @@
+## `v2016_10_12_1`
+
+* `bitrise` (CLI): `1.4.1`
+
+
 ## `v2016_10_04_1`
 
 * Install `bundler` for system Ruby
