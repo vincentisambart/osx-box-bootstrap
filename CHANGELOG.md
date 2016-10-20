@@ -1,3 +1,8 @@
+## `v2016_10_20_1`
+
+* Xamarin specific: new preinstalled packages: `android-25` & `build-tools-25.0.0`
+
+
 ## `v2016_10_14_1`
 
 * `bitrise` (CLI): `1.4.2`
