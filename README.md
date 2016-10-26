@@ -68,7 +68,7 @@ if you have to change anything.*
 * When preparing for a specific setup (e.g. Xcode version)
     * clone this "vanilla box"
     * update to the OS X version you want
-    * double check the "Once installed:" section of "OS X Install guide (common) section"
+    * double check the "Once installed:" section of "OS X Install guide (common)" section
         * in some cases OS X version update might turn off e.g. Remote Login!
     * install the VMware Tools
     * check and wait if Spotlight is indexing
