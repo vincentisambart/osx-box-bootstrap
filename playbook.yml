@@ -146,32 +146,49 @@
     # Install and update homebrew
     - name: run brew installer script
       script: installers/install_brew.sh creates=/usr/local/bin/brew
-    - homebrew: update_homebrew=yes upgrade_all=no
+    - name: brew update
+      homebrew: update_homebrew=yes upgrade_all=no
     # brew some commands
-    - homebrew: name=git state=present
-    - homebrew: name=wget state=present
-    - homebrew: name=mercurial state=present
-    - homebrew: name=xctool state=present
-    - homebrew: name=node state=present
-    - homebrew: name=ansible state=present
-    - homebrew: name=coreutils state=present
-    - homebrew: name=watchman state=present
-    - homebrew: name=flow state=present
-    - homebrew: name=tree state=present
-    - homebrew: name=carthage state=present
-    - homebrew: name=imagemagick state=present
-    - homebrew: name=ghostscript state=present
+    - name: brew install git
+      homebrew: name=git state=present
+    - name: brew install wget
+      homebrew: name=wget state=present
+    - name: brew install mercurial
+      homebrew: name=mercurial state=present
+    - name: brew install xctool
+      homebrew: name=xctool state=present
+    - name: brew install node
+      homebrew: name=node state=present
+    - name: brew install ansible
+      homebrew: name=ansible state=present
+    - name: brew install coreutils
+      homebrew: name=coreutils state=present
+    - name: brew install watchman
+      homebrew: name=watchman state=present
+    - name: brew install flow
+      homebrew: name=flow state=present
+    - name: brew install tree
+      homebrew: name=tree state=present
+    - name: brew install carthage
+      homebrew: name=carthage state=present
+    - name: brew install imagemagick
+      homebrew: name=imagemagick state=present
+    - name: brew install ghostscript
+      homebrew: name=ghostscript state=present
 
-    - name: Install java
+    - name: brew Install java
       homebrew_cask: name=java state=present
 
     # Ruby
-    - homebrew: name=ruby state=present
+    - name: brew install ruby
+      homebrew: name=ruby state=present
 
     ## Go
     # Gopath is $HOME/go
-    - homebrew: name=go state=present
-    - file: path="/Users/{{ param_user }}/go/{{ item.fold_path }}"
+    - name: brew install go
+      homebrew: name=go state=present
+    - name: prepare GOPATH dirs
+      file: path="/Users/{{ param_user }}/go/{{ item.fold_path }}"
         state=directory
         owner="{{ param_user }}"
       with_items:
@@ -181,12 +198,15 @@
 
 
     # Default ruby version (brew installed ruby)
-    - shell: bash -l -c "gem install --no-document bundler cocoapods nomad-cli xcpretty fastlane"
+    - name: gem install tools
+      shell: bash -l -c "gem install --no-document bundler cocoapods nomad-cli xcpretty fastlane"
       when: is_incremental_setup|default(false) == false
-    - shell: bash -l -c "bundle --version"
+    - name: bundle version
+      shell: bash -l -c "bundle --version"
       when: is_incremental_setup|default(false) == false
     # GEMs: Cocoapods
-    - shell: bash -l -c "pod setup || pod setup"
+    - name: pod setup
+      shell: bash -l -c "pod setup || pod setup"
       when: is_incremental_setup|default(false) == false
 
     # Git config
