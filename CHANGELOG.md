@@ -1,3 +1,8 @@
+## `v2016_10_27_1`
+
+* `xctool` removed - `brew install xctool` fails on MacOS Sierra
+
+
 ## `v2016_10_24_1`
 
 * `bitrise` (CLI): `1.4.3`

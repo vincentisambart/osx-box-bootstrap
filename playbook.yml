@@ -155,8 +155,6 @@
       homebrew: name=wget state=present
     - name: brew install mercurial
       homebrew: name=mercurial state=present
-    - name: brew install xctool
-      homebrew: name=xctool state=present
     - name: brew install node
       homebrew: name=node state=present
     - name: brew install ansible
