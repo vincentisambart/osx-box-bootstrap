@@ -1,3 +1,8 @@
+## `v2016_11_02_1`
+
+* Xamarin only: `/Library/Frameworks/Mono.framework/Versions/Current/Commands` added to `PATH`
+
+
 ## `v2016_10_27_1`
 
 * `xctool` removed - `brew install xctool` fails on MacOS Sierra
