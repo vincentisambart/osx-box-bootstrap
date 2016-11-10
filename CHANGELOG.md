@@ -1,3 +1,9 @@
+## `v2016_11_09_1`
+
+* `bitrise` (CLI): `1.4.4`
+* Xamarin only: generate a debug keystore if that's missing
+
+
 ## `v2016_11_02_1`
 
 * Xamarin only: `/Library/Frameworks/Mono.framework/Versions/Current/Commands` added to `PATH`
