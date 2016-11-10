@@ -71,6 +71,13 @@
     - name: "bitrise-bridge -version"
       shell: bash -l -c "bitrise-bridge --version"
 
+    - name: "cmd-bridge: download"
+      shell: bash -l -c "curl -fL https://github.com/bitrise-io/cmd-bridge/releases/download/0.9.5/cmd-bridge-$(uname -s)-$(uname -m) > /usr/local/bin/cmd-bridge"
+    - name: "Make the cmd-bridge executable"
+      file: path=/usr/local/bin/cmd-bridge mode="u=rwx,g=rx,o=rx"
+    - name: "cmd-bridge -version"
+      shell: bash -l -c "cmd-bridge --version"
+
 
     # ----------------------------------------
     # --- Cleanup ---
