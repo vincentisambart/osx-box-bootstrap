@@ -1,11 +1,10 @@
 #!/bin/bash
 
 (
-  set -v
-  set -e
+  set -ex
 
   # Install from GitHub releases
-  curl -fL https://github.com/bitrise-io/cmd-bridge/releases/download/0.9.4/cmd-bridge-$(uname -s)-$(uname -m) > /usr/local/bin/cmd-bridge
+  curl -fL https://github.com/bitrise-io/cmd-bridge/releases/download/0.9.5/cmd-bridge-$(uname -s)-$(uname -m) > /usr/local/bin/cmd-bridge
   chmod +x /usr/local/bin/cmd-bridge
   cmd-bridge -version
 
