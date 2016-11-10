@@ -2,6 +2,7 @@
 
 * `bitrise` (CLI): `1.4.4`
 * `cmd-bridge`: `0.9.5`
+* `bitrise-bridge`: `0.9.11`
 * Xamarin only: generate a debug keystore if that's missing
 
 
