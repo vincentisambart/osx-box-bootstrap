@@ -1,3 +1,10 @@
+## `v2016_11_17_1`
+
+* `MATCH_KEYCHAIN_PASSWORD` env var defined, to fix the `fastlane` macOS Sierra keychain handling issue (https://github.com/fastlane/fastlane/issues/6866)
+* Xamarin only: removed `sys-img-armeabi-v7a-android-23`, the package is no longer available in `android update sdk`
+* Xamarin only: `ANDROID_NDK_HOME` env var is now defined
+
+
 ## `v2016_11_10_1`
 
 * `bitrise` (CLI): `1.4.5`
