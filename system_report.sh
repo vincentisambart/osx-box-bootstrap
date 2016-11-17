@@ -173,25 +173,28 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo
   echo "--- Android"
   echo
-  echo "* ANDROID_HOME:"
+  echo "* ANDROID_HOME (${ANDROID_HOME}) content:"
   ls -alh ${ANDROID_HOME}
   echo
-  echo "* platform-tools:"
+  echo "* ANDROID_NDK_HOME (${ANDROID_NDK_HOME}) content:"
+  ls -alh ${ANDROID_NDK_HOME}
+  echo
+  echo "* platform-tools content:"
   ls -1 ${ANDROID_HOME}/platform-tools
   echo
-  echo "* build-tools:"
+  echo "* build-tools content:"
   ls -1 ${ANDROID_HOME}/build-tools
   echo
-  echo "* extras:"
+  echo "* extras content:"
   tree -L 2 ${ANDROID_HOME}/extras
   echo
   echo "* extra-android-support package version:"
   cat ${ANDROID_HOME}/extras/android/support/source.properties | grep 'Pkg.Revision='
   echo
-  echo "* platforms:"
+  echo "* platforms content:"
   ls -1 ${ANDROID_HOME}/platforms
   echo
-  echo "* system-images:"
+  echo "* system-images content:"
   tree -L 3 ${ANDROID_HOME}/system-images
   echo "========================================"
   echo
