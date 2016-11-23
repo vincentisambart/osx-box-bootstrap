@@ -1,3 +1,8 @@
+## `v2016_11_23_1`
+
+* Xamarin only: preinstalled `build-tools-25.0.1` android package
+
+
 ## `v2016_11_17_1`
 
 * `MATCH_KEYCHAIN_PASSWORD` env var defined, to fix the `fastlane` macOS Sierra keychain handling issue (https://github.com/fastlane/fastlane/issues/6866)
