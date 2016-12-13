@@ -103,11 +103,11 @@ echo "=== Checking Xcode CLT dirs ============"
 # installed by `xcode-select --install`, if called *before*
 #  Xcode.app is installed
 echo
-echo " * ls -alh /usr/include/CommonCrypto"
-ls -alh /usr/include/CommonCrypto
+echo " * ls -1 /usr/include/CommonCrypto"
+ls -1 /usr/include/CommonCrypto
 echo
-echo " * ls -alh /Library/Developer/CommandLineTools/"
-ls -alh /Library/Developer/CommandLineTools/
+echo " * ls -1 /Library/Developer/CommandLineTools/"
+ls -1 /Library/Developer/CommandLineTools/
 echo
 echo " * /Library/Developer/CommandLineTools/usr/bin/swift --version"
 /Library/Developer/CommandLineTools/usr/bin/swift --version
@@ -174,7 +174,7 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo "--- Android"
   echo
   echo "* ANDROID_HOME (${ANDROID_HOME}) content:"
-  ls -alh ${ANDROID_HOME}
+  ls -1 ${ANDROID_HOME}
   echo
   echo "* ANDROID_NDK_HOME (${ANDROID_NDK_HOME}) content:"
   if [ -z "$ANDROID_NDK_HOME" ] ; then
@@ -186,7 +186,7 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
       exit 1
     fi
   else
-    ls -alh ${ANDROID_NDK_HOME}
+    ls -1 ${ANDROID_NDK_HOME}
   fi
   echo
   echo "* platform-tools content:"
@@ -197,7 +197,6 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo
   echo "* extras content:"
   tree -L 2 ${ANDROID_HOME}/extras
-  echo
   echo
   echo "* platforms content:"
   ls -1 ${ANDROID_HOME}/platforms
