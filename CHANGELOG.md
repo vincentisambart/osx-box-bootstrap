@@ -1,3 +1,9 @@
+## `v2016_12_13_1`
+
+* Xamarin only: `extra-android-support` is no longer available, removed
+* minor system report improvements
+
+
 ## `v2016_11_23_1`
 
 * Xamarin only: preinstalled `build-tools-25.0.1` android package
