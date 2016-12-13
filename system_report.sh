@@ -198,8 +198,6 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo "* extras content:"
   tree -L 2 ${ANDROID_HOME}/extras
   echo
-  echo "* extra-android-support package version:"
-  cat ${ANDROID_HOME}/extras/android/support/source.properties | grep 'Pkg.Revision='
   echo
   echo "* platforms content:"
   ls -1 ${ANDROID_HOME}/platforms
