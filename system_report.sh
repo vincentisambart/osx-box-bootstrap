@@ -177,7 +177,17 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   ls -alh ${ANDROID_HOME}
   echo
   echo "* ANDROID_NDK_HOME (${ANDROID_NDK_HOME}) content:"
-  ls -alh ${ANDROID_NDK_HOME}
+  if [ -z "$ANDROID_NDK_HOME" ] ; then
+    if [[ "$BITRISE_OSX_STACK_REV_ID" == "v2016_08_10_1" ]] ; then
+      # Old, LTS Xamarin stack
+      echo " (!) ANDROID_NDK_HOME environment variable is not defined!"
+    else
+      echo " [!] ANDROID_NDK_HOME environment variable is not defined!"
+      exit 1
+    fi
+  else
+    ls -alh ${ANDROID_NDK_HOME}
+  fi
   echo
   echo "* platform-tools content:"
   ls -1 ${ANDROID_HOME}/platform-tools
