@@ -1,3 +1,9 @@
+## `v2016_12_15_1`
+
+* `bitrise` (CLI): `1.5.1`
+* Xamarin only: preinstalled `build-tools-25.0.2` android package
+
+
 ## `v2016_12_13_1`
 
 * Xamarin only: `extra-android-support` is no longer available, removed
