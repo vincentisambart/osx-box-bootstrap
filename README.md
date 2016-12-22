@@ -163,6 +163,8 @@ Once installed:
 * Check & wait for Spotlight to finish indexing
 * Restart
     * Disable "Reopen windows when logged back in"
+* Check `Activity Monitor` to see if there are any unnecessary daemon processes,
+  which consume significant CPU/Memory
 
 ## Provisioning
 
