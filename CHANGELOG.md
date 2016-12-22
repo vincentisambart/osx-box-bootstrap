@@ -1,3 +1,8 @@
+## `v2016_12_22_1`
+
+* Disabled APSD process, due to high CPU consumption in macOS 10.12
+
+
 ## `v2016_12_15_1`
 
 * `bitrise` (CLI): `1.5.1`
