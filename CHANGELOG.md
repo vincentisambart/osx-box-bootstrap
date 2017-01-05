@@ -1,3 +1,10 @@
+## `v2017_01_05_1`
+
+* Using `homebrew/versions/ruby23` for now, instead of the latest `ruby`,
+  as pretty much every popular Ruby based tool have issues with Ruby 2.4 right now.
+* Preinstalled `ionic` and `cordova` npm (CLI) packages
+
+
 ## `v2016_12_22_1`
 
 * Disabled APSD process, due to high CPU consumption in macOS 10.12
