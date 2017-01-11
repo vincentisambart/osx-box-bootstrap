@@ -1,3 +1,8 @@
+## `v2017_01_11_1`
+
+* `bitrise` (CLI): `1.5.2`
+
+
 ## `v2017_01_05_1`
 
 * Using `homebrew/versions/ruby23` for now, instead of the latest `ruby`,
