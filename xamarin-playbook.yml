@@ -95,13 +95,13 @@
     # Install debug.keystore
     # $HOME/.local/share/Xamarin/Mono for Android/debug.keystore
     - name: "ensure Xamarin debug.keystore dir exists"
-      file: path="Users/{{ param_user }}/.local/share/Xamarin/Mono for Android"
+      file: path="/Users/{{ param_user }}/.local/share/Xamarin/Mono for Android"
         state=directory
         owner="{{ param_user }}"
         mode=0755
     - name: install debug.keystore
       copy: src=xamarin/debug.keystore
-        dest="Users/{{ param_user }}/.local/share/Xamarin/Mono for Android/debug.keystore"
+        dest="/Users/{{ param_user }}/.local/share/Xamarin/Mono for Android/debug.keystore"
         owner="{{ param_user }}"
         mode=0644
 
