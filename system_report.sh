@@ -212,7 +212,7 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   tree -L 3 ${ANDROID_HOME}/system-images
   echo
   echo "* debug.keystore path:"
-  debug_keystore_pth="$HOME/.local/share/Mono for Android/debug.keystore"
+  debug_keystore_pth="$HOME/.local/share/Xamarin/Mono for Android/debug.keystore"
   if [ -f "${debug_keystore_pth}" ] ; then
     echo "$debug_keystore_pth"
   else
