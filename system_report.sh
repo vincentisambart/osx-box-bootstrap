@@ -217,8 +217,11 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
     echo "$debug_keystore_pth"
   else
     echo "Missing android debug.keystore"
-    tree "$HOME/.local/share"
-    exit 1
+    if [[ "$BITRISE_OSX_STACK_REV_ID" != "v2016_08_10_1" ]] ; then
+      # Fail, unless old LTS Xamarin stack
+      tree "$HOME/.local/share"
+      exit 1
+    fi
   fi
   echo "========================================"
   echo
