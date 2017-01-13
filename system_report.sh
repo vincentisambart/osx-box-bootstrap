@@ -217,6 +217,7 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
     echo "$debug_keystore_pth"
   else
     echo "Missing android debug.keystore"
+    tree "$HOME/.local/share"
     exit 1
   fi
   echo "========================================"
