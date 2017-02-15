@@ -1,3 +1,8 @@
+## `v2017_02_15_1`
+
+* `bitrise` (CLI): `1.5.4`
+
+
 ## `v2017_01_12_1`
 
 * Xamarin only: make sure that a default `debug.keystore` is available in the system
