@@ -209,10 +209,6 @@
 
 
     # Default ruby version (brew installed ruby)
-    - name: update rubygems
-      shell: bash -l -c "sudo gem update --system --no-document"
-      become: yes
-      when: is_incremental_setup|default(false) == false
     - name: gem install tools
       shell: bash -l -c "gem install --no-document bundler cocoapods nomad-cli xcpretty fastlane"
       when: is_incremental_setup|default(false) == false
@@ -222,6 +218,11 @@
     # GEMs: Cocoapods
     - name: pod setup
       shell: bash -l -c "pod setup || pod setup"
+      when: is_incremental_setup|default(false) == false
+    # Update system rubygems
+    - name: update rubygems
+      shell: bash -l -c "sudo gem update --system --no-document"
+      become: yes
       when: is_incremental_setup|default(false) == false
 
     # NPM global packages
