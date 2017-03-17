@@ -148,11 +148,6 @@
       shell: launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
       become: yes
 
-    # Update system rubygems
-    - name: update rubygems
-      shell: bash -l -c "sudo gem update --system --no-document"
-      become: yes
-      when: is_incremental_setup|default(false) == false
     # Install bundler for system Ruby
     - name: install bundler for system ruby
       shell: bash -l -c "sudo gem install bundler"
