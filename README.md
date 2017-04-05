@@ -75,6 +75,23 @@ if you have to change anything.*
     * Save it as an environment specific "base box"
     * Continue with Provisioning
 
+#### Disable macOS SIP (System Integration Protection) in vSphere
+
+If you can't hit Command+R fast enough when the VM boots (you most likely can't):
+
+Click on VM and select tab Summary and then
+under VM Hardware -> Edit Settings: VM Options: Boot Options: Boot Delay Enter 10000 as milliseconds ( 10 seconds ).
+
+Start the VM, open it's tab/window, click into (just to be sure it has keyboard focus),
+and start keep holding Command+R. VMware boot menu will appear -
+__you should still keep holding Cmd+R__, while also hit Enter to select the default "Boot normally" option.
+__Once the Apple logo and the boot loading progress bar appears you can release Command+R__,
+and macOS will boot into Recovery mode.
+
+__Restore the boot delay to 0 once you manage to boot into Recovery mode!__
+
+Source: http://apple.stackexchange.com/a/237693/86977
+
 
 ### Parallels specific [no longer maintained]
 
@@ -165,6 +182,15 @@ Once installed:
     * Disable "Reopen windows when logged back in"
 * Check `Activity Monitor` to see if there are any unnecessary daemon processes,
   which consume significant CPU/Memory
+* Disable macOS SIP (System Integration Protection).
+    * You can do it in Recovery mode:
+        * When the VM boots hold: Command+R
+        * This should boot macOS into Recovery mode
+        * If you can't press&hold Cmd+R fast enough search for a solution for the virtualization tool.
+          In case of vSphere you can find a guide in the
+          "VMware vSphere specific/Disable macOS SIP (System Integration Protection) in vSphere" section above.
+    * Once Recover mode boots select Utilities -> Terminal
+    * And run the command: csrutil disable
 
 ## Provisioning
 
