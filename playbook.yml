@@ -154,7 +154,7 @@
 
     # Turn off APSD
     - name: "Turn off apsd - can be a CPU hog"
-      shell: launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
+      shell: sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
       become: yes
 
     # Install bundler for system Ruby
