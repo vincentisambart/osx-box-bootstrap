@@ -1,3 +1,12 @@
+## UPCOMING
+
+
+## `v2017_04_25_1`
+
+* Xamarin Only: .Net Core preinstalled
+    * Thanks @stefandevo for the PR https://github.com/bitrise-io/osx-box-bootstrap/pull/41
+
+
 ## `v2017_04_12_1`
 
 * `bitrise` (CLI): `1.5.6`
