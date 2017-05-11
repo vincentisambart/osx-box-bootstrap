@@ -1,6 +1,11 @@
 ## UPCOMING
 
 
+## `v2017_05_11_1`
+
+* `bitrise` (CLI): `1.6.1`
+
+
 ## `v2017_05_02_1`
 
 * Xamarin Only: .Net Core __removed__, no longer preinstalled. Please use the new `install-dotnetcore` step instead.
