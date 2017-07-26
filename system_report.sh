@@ -166,8 +166,13 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo
   echo "--- Xamarin"
   echo
-  echo "* Visual Studio"
-  cat "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/buildinfo"
+  if [ -e "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/buildinfo" ] ; then
+    echo "* Visual Studio"
+    cat "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/buildinfo"
+  else
+    echo "* Xamarin Studio"
+    cat "/Applications/Xamarin Studio.app/Contents/Resources/lib/monodevelop/bin/buildinfo"
+  fi
   echo
   echo "* Mono version:"
   mono --version
