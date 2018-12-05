@@ -1,0 +1,20 @@
+---
+
+# Patch .bashrc
+
+- name: Patch .bashrc
+  become: yes
+  blockinfile:
+    insertbefore: "keep a newline"
+    path: /Users/{{ param_user }}/.bashrc
+    block: "{{ lookup('template', 'patch.j2') }}"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK - {{ patch_marker }}"
+
+- name: Final newline
+  become: yes
+  lineinfile:
+    insertbefore: "keep a newline"
+    path: /Users/{{ param_user }}/.bashrc
+    line: ""
+
+...
