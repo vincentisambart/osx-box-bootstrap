@@ -193,6 +193,21 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo "* Xamarin.iOS"
   /Developer/MonoTouch/usr/bin/mtouch --version
   echo
+  echo "* debug.keystore path:"
+  debug_keystore_pth="$HOME/.local/share/Xamarin/Mono for Android/debug.keystore"
+  if [ -f "${debug_keystore_pth}" ] ; then
+    echo "$debug_keystore_pth"
+  else
+    echo "Missing android debug.keystore"
+    if [[ "$BITRISE_OSX_STACK_REV_ID" != "v2016_08_10_1" ]] ; then
+      # Fail, unless old LTS Xamarin stack
+      tree "$HOME/.local/share"
+      exit 1
+    fi
+  fi
+fi
+
+if [ -z "$ANDROID_HOME" ] ; then
   echo "--- Android"
   echo
   echo "* ANDROID_HOME (${ANDROID_HOME}) content:"
@@ -230,18 +245,6 @@ if [ ! -z "$BITRISE_XAMARIN_FOLDER_PATH" ] ; then
   echo "* system-images content:"
   tree -L 3 ${ANDROID_HOME}/system-images
   echo
-  echo "* debug.keystore path:"
-  debug_keystore_pth="$HOME/.local/share/Xamarin/Mono for Android/debug.keystore"
-  if [ -f "${debug_keystore_pth}" ] ; then
-    echo "$debug_keystore_pth"
-  else
-    echo "Missing android debug.keystore"
-    if [[ "$BITRISE_OSX_STACK_REV_ID" != "v2016_08_10_1" ]] ; then
-      # Fail, unless old LTS Xamarin stack
-      tree "$HOME/.local/share"
-      exit 1
-    fi
-  fi
   echo "========================================"
   echo
 fi
