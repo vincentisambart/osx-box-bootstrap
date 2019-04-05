@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2019_04_05_1`
+* `flutter`: installed
+
 ## `v2019_04_03_1`
 * `ngrok link`: installed
 
