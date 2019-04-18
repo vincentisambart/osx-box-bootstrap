@@ -1,5 +1,4 @@
 ---
-
 # Java 8 install
 # We need Java 8 because sdkmanager doesn't support newer Java versions (yet)
 # Also we need to manually call launchctl because otherwise it breaks the brew uninstall task
@@ -37,14 +36,14 @@
     name: java
     state: absent
 
-- name: brew tap homebrew/cask-versions
+- name: brew tap AdoptOpenJDK/openjdk
   homebrew_tap:
-    name: homebrew/cask-versions
+    name: AdoptOpenJDK/openjdk
     state: present
 
-- name: brew install java8
+- name: brew cask install adoptopenjdk8
   homebrew_cask:
-    name: java8
+    name: adoptopenjdk8
     state: present
 
 - name: Detect JAVA_HOME
