@@ -2,19 +2,20 @@
 
 # Patch .bashrc
 
-- name: Patch .bashrc
-  become: yes
-  blockinfile:
-    insertbefore: "keep a newline"
-    path: /Users/{{ param_user }}/.bashrc
-    block: "{{ lookup('template', 'patch.j2') }}"
-    marker: "# {mark} ANSIBLE MANAGED BLOCK - Android Additions"
+- name: Creates profile.d directory
+  file:
+    path: $HOME/profile.d
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0660
 
-- name: Final newline
-  become: yes
-  lineinfile:
-    insertbefore: "keep a newline"
-    path: /Users/{{ param_user }}/.bashrc
-    line: ""
+- name: Create patch.sh to profile.d
+  template:
+    src: patch.j2
+    dest: $HOME/profile.d/patch_bashrc.sh
+    owner: vagrant
+    group: vagrant
+    mode: 0770
 
 ...
