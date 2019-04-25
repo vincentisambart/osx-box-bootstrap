@@ -10,6 +10,7 @@
   become: yes
 
 - name: Creates profile.d directory
+  become: yes
   file:
     path: $HOME/profile.d
     state: directory
