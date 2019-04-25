@@ -12,7 +12,7 @@
     path: $HOME/profile.d
     state: directory
     owner: vagrant
-    group: vagrant
+    group: wheel
     mode: 0660
 
 - name: Create patch.sh to profile.d
@@ -20,7 +20,7 @@
     src: patch.j2
     dest: $HOME/profile.d/jenv_patch.sh
     owner: vagrant
-    group: vagrant
+    group: wheel
     mode: 0770
 
 - name: setup jEnv
