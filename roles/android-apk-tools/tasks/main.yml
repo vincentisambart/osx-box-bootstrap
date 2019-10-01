@@ -1,0 +1,53 @@
+---
+- name: Create apktools_path directory
+  become: yes
+  file:
+    path: "{{ apktools_path }}"
+    state: directory
+    owner: "{{ param_user }}"
+    mode : 0770
+    recurse: yes
+  tags:
+    - apktools
+
+- name: Download aapt2
+  become: yes
+  get_url:
+    url: "{{ aapt2_source }}"
+    dest: /opt/aapt2.jar
+    mode: 0660
+  tags:
+    - apktools
+
+- name: Unzip aapt2
+  become: yes
+  unarchive:
+    src: /opt/aapt2.jar
+    dest: "{{ apktools_path }}"
+    owner: "{{ param_user }}"
+    mode: 0770
+    remote_src: yes
+    extra_opts: # only unzip the executable
+      - aapt2
+  tags:
+    - apktools
+
+- name: Remove aapt2 zip file
+  become: yes
+  file:
+    state: absent
+    path: /opt/aapt2.jar
+  tags:
+    - apktools
+
+- name: Download bundletool
+  become: yes
+  get_url:
+    url: "{{ bundletool_source }}"
+    dest: "{{ apktools_path }}/bundletool.jar"
+    owner: "{{ param_user }}"
+    mode: 0660
+  tags:
+    - apktools
+
+...

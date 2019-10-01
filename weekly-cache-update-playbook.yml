@@ -23,6 +23,7 @@
     - role: android
       tags: java-android
     - role: android-sdk-packages
+    - role: android-apk-tools
     - role: java-tools
       tags: java-android
     - role: flutter

@@ -253,6 +253,18 @@ if [ -n "$ANDROID_HOME" ] ; then
 fi
 
 echo
+echo "=== Android APK tools =================="
+echo
+echo "* aapt2:"
+/opt/apktools/aapt2 version
+echo
+echo "* bundletool:"
+java -jar /opt/apktools/bundletool.jar version
+echo
+echo "========================================"
+echo
+
+echo
 echo "=== Environment infos ======================="
 if [ -z "${MATCH_KEYCHAIN_PASSWORD}" ] ; then
   echo "MATCH_KEYCHAIN_PASSWORD environment NOT set"
