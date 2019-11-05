@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2019_11_04_1`
+* `flutter`: `v1.9.1+hotfix.6`
+
 ## `v2019_10_24_1`
 * `remove bundletools from system report`
 
