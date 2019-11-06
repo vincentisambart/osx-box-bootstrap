@@ -1,5 +1,9 @@
 ## UPCOMING
 
+
+## `v2019_11_05_1`
+* `implemented a bugfix for the recent CocoaPods specs install issue`
+
 ## `v2019_11_04_1`
 * `flutter`: `v1.9.1+hotfix.6`
 
