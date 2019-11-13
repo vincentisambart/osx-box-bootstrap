@@ -134,6 +134,9 @@
   homebrew: name=swift-sh state=latest
 
 
+- name: "firebase (CLI)"
+  shell: curl -sL firebase.tools | bash
+
 
 # ----------------------------------------
 # --- Cleanup ---

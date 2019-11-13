@@ -1,9 +1,9 @@
 ## UPCOMING
 
-
 ## v2019_11_13_1
 * `bitrise` (CLI): `1.36.0`
 * `swift-sh`: `1.14.1`
+* `firebase`: `7.6.2`
 
 ## `v2019_11_06_1`
 * `removed deprecated cocoapods version (<1.0) related weekly update`
