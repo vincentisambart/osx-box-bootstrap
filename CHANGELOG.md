@@ -1,6 +1,7 @@
 ## UPCOMING
 
 ## v2019_12_12_1
+* Gem install fix
 * `bitrise` (CLI): `1.37.0`
 
 ## v2019_12_05_1
