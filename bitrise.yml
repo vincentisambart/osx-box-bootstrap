@@ -140,7 +140,16 @@ workflows:
             - content: |-
                 #!/usr/bin/env bash
                 set -ex
-                pod repo remove master
+                #Originally the command was pod repo remove master, it just erased the dir under .cocoapods/repos/master.
+                #It is huge. Not by size, but the number of files. Instead just moved to /var/tmp it is way faster and it runs only during ci.
+                mv ~/.cocoapods/repos/master /var/tmp/
+      - script:
+          title: Add ansible config
+          run_if: .IsCI
+          inputs:
+            - content: |-
+                #!/usr/bin/env bash
+                echo -e "[defaults]\ncallback_whitelist=profile_tasks" > ansible.cfg
       - script:
           title: Run Ansible Playbook on CI's build VM
           run_if: .IsCI
@@ -149,7 +158,7 @@ workflows:
                 #!/usr/bin/env bash
 
                 set -ex
-                ansible-playbook -e xcode_path="$(xcode-select -p)" --connection=local --inventory 127.0.0.1, --limit 127.0.0.1 "${LOCAL_PLAYBOOK_PATH}"
+                ansible-playbook -e is_ci=true -e xcode_path="$(xcode-select -p)" --connection=local --inventory 127.0.0.1, --limit 127.0.0.1 "${LOCAL_PLAYBOOK_PATH}"
   _cli-version:
     steps:
       - script:
