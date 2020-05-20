@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2020_05_20_1`
+* `flutter`: `1.17.1`
+
 ## `v2020_04_28_1`
 * `automation to update visual studio`
 
