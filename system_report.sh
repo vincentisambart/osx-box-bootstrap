@@ -64,6 +64,7 @@ ver_line="$(convert --version | head -1)" ;       echo "* imagemagick (convert):
 ver_line="$(ps2ascii --version)" ;                echo "* ghostscript (ps2ascii): $ver_line"
 ver_line="$(screen --version | grep Screen)" ;    echo "* screen: $ver_line"
 ver_line="$(firebase --version)" ;                    echo "* firebase: $ver_line"
+ver_line="$(applesimutils -v)" ;                  echo "* $ver_line"
 
 
 

@@ -92,6 +92,18 @@
 - name: "CocoaPods: pod repo update"
   shell: bash -l -c "pod repo update"
 
+# ----------------------------------------
+# --- applesimutils install ---
+# ----------------------------------------
+
+- name: "Set up wix/brew"
+  homebrew_tap:
+    name: wix/brew
+    state: present
+- name: "Install applesimutils"
+  homebrew:
+    name: applesimutils
+    state: present
 
 # ----------------------------------------
 # --- Bitrise CLI tools ---

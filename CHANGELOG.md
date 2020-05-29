@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2020_05_29_1`
+* `added applesimutils under weekly-update-shared`
+
 ## `v2020_05_20_1`
 * `flutter`: `1.17.1`
 
