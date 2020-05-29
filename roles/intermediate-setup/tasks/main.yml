@@ -110,22 +110,6 @@
   shell: bash -l -c "curl -sL firebase.tools | bash"
   become: yes
 
-## Go
-# Gopath is $HOME/go
-- name: brew install go
-  homebrew:
-    name: go
-    state: present
-- name: prepare GOPATH dirs
-  file:
-    path: "/Users/{{ param_user }}/go/{{ item.fold_path }}"
-    state: directory
-    owner: "{{ param_user }}"
-  with_items:
-    - { fold_path: 'src' }
-    - { fold_path: 'bin' }
-    - { fold_path: 'pkg' }
-
 # NPM global packages
 - name: Install "ionic", "cordova" and "appcenter-cli" NodeJS packages globally
   shell: bash -l -c "npm install -g ionic cordova appcenter-cli"
