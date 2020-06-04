@@ -47,15 +47,6 @@
   shell: sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
   become: yes
 
-#
-# Install and update homebrew
-- name: run brew installer script
-  script: install_brew.sh creates=/usr/local/bin/brew
-- name: brew update
-  homebrew:
-    update_homebrew: yes
-    upgrade_all: no
-
 # Ruby
 - name: brew install rbenv
   homebrew:
