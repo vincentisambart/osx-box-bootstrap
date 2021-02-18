@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2021_02_18_2`
+* `Add Java 11 to jenv`
+
 ## `v2021_02_18`
 * `Only run those tests that has config changes`
 
@@ -8,6 +11,7 @@
 
 ## `v2021_01_12`
 * `Revert: Removed Specs repo master, for it is not necessary from 1.8 and up`
+
 ## `v2021_01_08`
 * `brew install fixes`
 
