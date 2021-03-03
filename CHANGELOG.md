@@ -1,5 +1,7 @@
 ## UPCOMING
 
+## `v2021_03_03_2`
+* `Fix for kcpassword enabling autologin`
 
 ## `v2021_03_03_1`
 * `Fix Simulator list according to convention and add one for 12.0`
