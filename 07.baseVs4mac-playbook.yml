@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become_method: sudo
+  any_errors_fatal: true
+  vars:
+    param_user: vagrant
+  roles:
+    - role: profiles
+    - role: vs4mac
+    - role: xamarin
