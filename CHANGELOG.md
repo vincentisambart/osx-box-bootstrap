@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2021_03_09_3`
+* `Refactor profiles role and create molecule tests`
+
 ## `v2021_03_09_2`
 * `Re run xamarin and make sure it is sourced`
 
