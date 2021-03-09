@@ -1,5 +1,8 @@
 ## UPCOMING
 
+## `v2021_03_09_2`
+* `Re run xamarin and make sure it is sourced`
+
 ## `v2021_03_09_1`
 * `Update CODEOWNERS`
 
