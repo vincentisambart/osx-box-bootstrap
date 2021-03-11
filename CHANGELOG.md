@@ -1,5 +1,9 @@
 ## UPCOMING
 
+
+## `v2021_03_11_1`
+* `Hardcode Go version`
+
 ## `v2021_03_11`
 * `fix the cocoapods update logic`
 
