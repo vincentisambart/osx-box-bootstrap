@@ -3,6 +3,9 @@
 ## `v2021_03_19`
 * `DEN agent downloaded by version from GitHub`
 
+## `v2021_03_18_3`
+* `separate Spotlight and rerun in baseStack`
+
 ## `v2021_03_18_2`
 * `Set up SDK ROOT for xamarin`
 
