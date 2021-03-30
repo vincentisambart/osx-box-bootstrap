@@ -1,5 +1,7 @@
 ## UPCOMING
 
+## `v2021_03_30_1`
+* `(simulators) install iOS 14.5 on Xcode 12.5`
 
 ## `v2021_03_30`
 * `Integrate bin monitoring tool`
