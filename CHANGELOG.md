@@ -1,5 +1,9 @@
 ## UPCOMING
 
+
+## `v2021_03_30`
+* `Integrate bin monitoring tool`
+
 ## `v2021_03_29_1`
 * `(xcode) debug logs and robust xcode selection`
 
