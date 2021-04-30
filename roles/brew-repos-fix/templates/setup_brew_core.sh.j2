@@ -2,27 +2,27 @@
 
 set -e
 
-source {{ ansible_env.HOME }}/.bashrc
+source $HOME/.bashrc
 
 brew_repository=$(brew --repository)
 
 rm -rf "$brew_repository/Library/Taps/homebrew"
 
-rm -rf {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/homebrew-core
+rm -rf $HOME/mirrors/github.com/bitrise-io/homebrew-core
 
-mkdir -p {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/
+mkdir -p $HOME/mirrors/github.com/bitrise-io/
 
 git clone \
     --bare https://github.com/bitrise-io/homebrew-core \
-    {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/homebrew-core
+    $HOME/mirrors/github.com/bitrise-io/homebrew-core
 
 # Ensure we checked out the correct SHA
 git \
-    -C {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/homebrew-core \
+    -C $HOME/mirrors/github.com/bitrise-io/homebrew-core \
     rev-parse HEAD |\
-grep {{ homebrew_core.sha }}
+grep 9e21f78f8d3429f9fdd9390a76642dc1b8e63ed2
 
-export HOMEBREW_CORE_GIT_REMOTE="{{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/homebrew-core"
+export HOMEBREW_CORE_GIT_REMOTE="$HOME/mirrors/github.com/bitrise-io/homebrew-core"
 
 brew update
 brew install a || true

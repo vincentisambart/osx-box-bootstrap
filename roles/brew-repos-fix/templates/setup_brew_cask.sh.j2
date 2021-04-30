@@ -2,24 +2,24 @@
 
 set -e
 
-source {{ ansible_env.HOME }}/.bashrc
+source $HOME/.bashrc
 
 brew_repository=$(brew --repository)
 
-rm -rf {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/homebrew-cask
+rm -rf $HOME/mirrors/github.com/bitrise-io/homebrew-cask
 
-mkdir -p {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/
+mkdir -p $HOME/mirrors/github.com/bitrise-io/
 
 git clone \
     --bare https://github.com/bitrise-io/homebrew-cask \
-    {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/homebrew-cask
+    $HOME/mirrors/github.com/bitrise-io/homebrew-cask
 
 # Ensure we checked out the correct SHA
 git \
-    -C {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/homebrew-cask \
+    -C $HOME/mirrors/github.com/bitrise-io/homebrew-cask \
     rev-parse HEAD |\
-grep {{ homebrew_cask.sha }}
+grep f2ef2b1128740e5684f81a3ede7010194afea9dd
 
 rm -rf "${brew_repository}/Library/Taps/homebrew/homebrew-cask"
 
-git clone {{ ansible_env.HOME }}/mirrors/github.com/bitrise-io/homebrew-cask "${brew_repository}/Library/Taps/homebrew/homebrew-cask"
+git clone $HOME/mirrors/github.com/bitrise-io/homebrew-cask "${brew_repository}/Library/Taps/homebrew/homebrew-cask"
