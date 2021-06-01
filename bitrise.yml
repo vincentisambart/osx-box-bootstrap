@@ -191,12 +191,6 @@ workflows:
     envs:
       - LOCAL_PLAYBOOK_PATH: ./playbook.yml
 
-  test_ruby:
-    envs:
-    - ROLE: "ruby"
-    after_run:
-    - _run_molecule_test
-
   test_node:
     envs:
     - ROLE: "node"
@@ -218,12 +212,6 @@ workflows:
   test_intermediate-setup:
     envs:
     - ROLE: "intermediate-setup"
-    after_run:
-    - _run_molecule_test
-
-  test_flutter:
-    envs:
-    - ROLE: "flutter"
     after_run:
     - _run_molecule_test
 
@@ -266,6 +254,12 @@ workflows:
   test_bitrise-den:
     envs:
     - ROLE: "bitrise-den"
+    after_run:
+    - _run_molecule_test
+
+  test_python:
+    envs:
+    - ROLE: "python"
     after_run:
     - _run_molecule_test
 

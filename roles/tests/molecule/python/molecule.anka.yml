@@ -19,6 +19,8 @@ provisioner:
   inventory:
     host_vars:
       instance:
+        param_user: vagrant
+        param_group: staff
         ansible_user: vagrant
         ansible_ssh_pass: vagrant
   playbooks:
@@ -28,5 +30,4 @@ verifier:
   name: testinfra
   s: true
   additional_files_or_dirs:
-    - ../../../../ruby/tests/*
-    - ../../../../ruby-gems/tests/*
+    - ../../../../python/tests/*

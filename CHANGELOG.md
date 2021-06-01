@@ -1,5 +1,82 @@
 ## UPCOMING
 
+## `v2012_05_29`
+* `Fix xcbeautify version check`
+
+## `v2021_05_28_4`
+* `Move flutter & fvm related PATHs to profiles role`
+
+## `v2012_05_28_3`
+* `Change rol order to set up brew before using it`
+
+## `v2012_05_28_2`
+* `Update brew repos`
+
+## `v2012_05_28_1`
+* `Set TZ to GMT`
+
+## `v2012_05_28`
+* `Use FVM to manage Flutter`
+
+## `v2021_05_27`
+* `Add ruby 2.7.2 and 3.0.0 preinstalled`
+
+## `v2021_05_21_1`
+* `Created a separate role for python`
+
+## `v2021_05_21`
+* `Update Homebrew Core and Cask`
+
+## `v2021_05_19`
+* `Update DEN agent to v1.26.0`
+
+## `v2021_05_14`
+* `enable remote management when needed`
+## `v2021_05_07_1`
+* `fix python and pip permissions`
+
+## `v2021_05_07`
+* `rerun flutter role on last layer`
+
+## `v2021_05_03_1`
+* `exclude danger-swift on old stack`
+
+## `v2021_05_03`
+* `update DEN agent to v1.24.3`
+
+## `v2021_04_30_1`
+* `make sure xcode-install is there for simulators`
+
+## `v2021_04_30`
+* `fix vs4mac simulator installs nicely`
+
+## `v2021_04_28`
+* `update cocoapods to 1.10.1`
+
+## `v2021_04_27_3`
+* `add xcov and jazzy ruby gems`
+
+## `v2021_04_27_2`
+* `add brew upgrade to fix updates fix`
+
+## `v2021_04_27_1`
+* `add brew upgrade to fix updates`
+
+## `v2021_04_27`
+* `fix edge simulator install nicely`
+
+## `v2021_04_22`
+* `add danger-swift`
+
+## `v2021_04_21_2`
+* `Revert installing force brew updating`
+
+## `v2021_04_21_1`
+* `Revert installing iOS 14.5 from 12.5.x`
+
+## `v2021_04_21`
+* `Update xcode_version to 12.5 RC1`
+
 ## `v2021_04_13`
 * `Update homebrew cask/core commit sha`
 

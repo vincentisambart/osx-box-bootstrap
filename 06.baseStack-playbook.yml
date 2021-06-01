@@ -15,11 +15,13 @@
     - role: baseos
     - role: xamarin
       when: is_xamarin == true
+    - role: brew
+    - role: brew-repos-fix
+    - role: flutter
+    - role: python
     - role: certs
     - role: spotlight
     - role: keychain
-    - role: brew
-    - role: brew-repos-fix
     - role: enable-auto-login
     - role: go
     - role: bitrise-cli
@@ -30,6 +32,7 @@
     - role: cmd-bridge
     - role: misc-setup
     - role: node
+    - role: ruby
     - role: ruby-gems
     - role: simulators
     - role: weekly-update-shared

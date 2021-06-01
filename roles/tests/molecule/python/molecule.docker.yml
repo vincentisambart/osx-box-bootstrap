@@ -21,11 +21,10 @@ provisioner:
   inventory:
     host_vars:
       instance:
-        ansible_user: linuxbrew
-        ansible_ssh_pass: linuxbrew
+        param_user: linuxbrew
+        param_group: linuxbrew
 verifier:
   name: testinfra
   s: true
   additional_files_or_dirs:
-    - ../../../../ruby/tests/*
-    - ../../../../ruby-gems/tests/*
+    - ../../../../python/tests/*
