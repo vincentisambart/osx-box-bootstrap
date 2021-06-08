@@ -1,9 +1,19 @@
-## UPCOMING
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+## `v2012_06_08_2`
+* `update bitrise cli to 1.47.0`
 
 ## `v2012_06_08_1`
 * `fix(ruby): place .ruby-version remove step after "rbenv local" calls`
+
+## [Released]
+
 ## `v2012_06_04`
 * `fix(ruby): move task from ruby role to ruby-gems role`
+
 ## `v2012_06_03`
 * `fix(ruby): remove .ruby-version file`
 
