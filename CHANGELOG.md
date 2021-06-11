@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_06_10`
+* `add xcode install correctness checks`
+
 ## `v2021_06_09`
 * `update sql query in enable_accessibility.sh`
 
