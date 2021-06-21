@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_06_21`
+* `scan installed Xcode as basis for selection`
 
 ## `v2021_06_21`
 * `install haxm on every stack`
