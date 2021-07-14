@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## `v2021_07_13`
+* `update appcenter-cli to 1.9.0`
 * `update ci workflow`
 
 ## `v2021_07_09`
