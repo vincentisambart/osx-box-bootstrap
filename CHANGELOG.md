@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_07_28_1`
+* `Correct the stack layers order`
+
 ## `v2021_07_28`
 * `Upgrade DEN agent to v1.33.0`
 
