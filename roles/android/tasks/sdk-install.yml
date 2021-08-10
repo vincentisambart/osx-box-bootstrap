@@ -1,7 +1,7 @@
 ---
 - name: Test Android package is installed - {{ sdk }}
   environment:
-    PATH: "{{ android_home }}/cmdline-tools/tools/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ android_home }}/cmdline-tools/cmdline-tools/bin:{{ ansible_env.PATH }}"
   shell: "sdkmanager --list --verbose | awk '/Installed/,/Available' | grep '{{ sdk }}'"
   register: is_sdk_installed
   changed_when: false
@@ -10,7 +10,7 @@
 - name: Install Android packages with SDK Manager - {{ sdk }}
   become: true
   environment:
-    PATH: "{{ android_home }}/cmdline-tools/tools/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ android_home }}/cmdline-tools/cmdline-tools/bin:{{ ansible_env.PATH }}"
   shell: "(echo y | sdkmanager --verbose --install '{{ sdk }}')"  # noqa 204 306
   when: is_sdk_installed is failed
   retries: 3
