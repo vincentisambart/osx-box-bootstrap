@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_08_17`
+* `Update fastlane version to 2.191.0 (@D3icidal)`
+* `Upgrade Android SDK command line tools to version 7583922 for Java 11 compatibility (@gmiklos-ltg)`
+* `Include Android SDK package versions in system_report (@ofalvai)`
+* `Update Bitrise CLI to 1.47.2`
+* `Point Android NDK location to $ANDROID_HOME/ndk-bundle instead of /opt/android-ndk`
+
+## [Released]
+
 ## `v2021_08_10`
 * `update brew core and cask`
 
@@ -24,8 +33,6 @@ All notable changes to this project will be documented in this file.
 * `update Android commandline tools to 7302050`
 * `update Android NDK 21e`
 * `add Android build tools 30.0.1 - 30.0.3`
-
-## [Released]
 
 ## `v2021_07_06`
 * `update brew repos`

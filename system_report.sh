@@ -281,6 +281,13 @@ if [ -n "$ANDROID_HOME" ] ; then
   echo
   echo "========================================"
   echo
+
+  echo " * SDK packages:"
+  grep ^Pkg.Revision "${ANDROID_HOME}"/cmdline-tools/*/source.properties | cut -d= -f 2 | xargs -I {} echo "* Command line Tools version: {}"
+  grep ^Pkg.Revision "${ANDROID_HOME}"/platform-tools/source.properties | cut -d= -f 2 | xargs -I {} echo "* Platform Tools version: {}"
+  grep ^Pkg.Revision "${ANDROID_HOME}"/emulator/source.properties | cut -d= -f 2 | xargs -I {} echo "* Emulator version: {}"
+  echo "========================================"
+  echo
 fi
 
 echo

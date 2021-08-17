@@ -8,7 +8,7 @@ def test_cmdline_tools_installed_and_available(host):
 def test_installed_sdkmanager_packages(host):
   variables = get_variables_from_defaults(host)
   for package in variables['sdkmanagerpackages']:
-    assert host.run_expect([0], '. ~/profile.d/android.sh && ls $ANDROID_HOME/%s' % package.replace(";", "/"))
+    assert host.run_expect([0], '. ~/profile.d/android.sh && ls $ANDROID_HOME/%s' % package['name'].replace(";", "/"))
 
 def get_variables_from_defaults(host):
   return host.ansible("include_vars", "file=../../../android/defaults/main.yml")['ansible_facts']
