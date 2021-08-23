@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+## `v2021_08_23_1`
+* `add iOS 14.5 simulator to Xcode 13 stack`
 
 ## `v2021_08_23`
 * `Exclude used-tools monitoring until its fixed`
