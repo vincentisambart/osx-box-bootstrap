@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_08_23`
+* `Exclude used-tools monitoring until its fixed`
+
 ## `v2021_08_17`
 * `Update fastlane version to 2.191.0 (@D3icidal)`
 * `Upgrade Android SDK command line tools to version 7583922 for Java 11 compatibility (@gmiklos-ltg)`

@@ -36,4 +36,4 @@
     - role: ruby-gems
     - role: simulators
     - role: weekly-update-shared
-    - role: used-tools
+    # - role: used-tools // exclude until android-ndk path scan is fixed
