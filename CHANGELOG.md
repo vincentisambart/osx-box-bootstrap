@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_09_07_4`
+* `update fastlane to 2.192.0`
+
 ## `v2021_09_07_3`
 * `pre-install GPG`
 

@@ -7,7 +7,7 @@ gem_packages:
   - name: "bundler"
     version: "2.1.4"
   - name: "fastlane"
-    version: "2.191.0"
+    version: "2.192.0"
   - name: "xcov"
     version: "1.7.5"
   - name: "jazzy"
