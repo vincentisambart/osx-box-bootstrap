@@ -8,8 +8,8 @@ def test_bitrise_cli_exists(host):
 
 def test_bitrise_cli_version(host):
     actual = host.run("bitrise --version").stdout
-    # be at least 1.46.0
-    required = "1.46"
+    # be at least 1.48.0
+    required = "1.48"
     assert actual >= required
 
 def test_envman_is_installed(host):

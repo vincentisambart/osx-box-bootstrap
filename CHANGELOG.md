@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_09_07_2`
+* `Update Bitrise CLI to 1.48.0`
+
 ## `v2021_09_07`
 * `Set JDK11 as default`
 
