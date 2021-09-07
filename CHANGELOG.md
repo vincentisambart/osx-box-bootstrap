@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+
+## `v2021_09_07`
+* `Set JDK11 as default`
+
+## [Released]
+
 ## `v2021_08_23_2`
 * `update brew core and cask`
 
@@ -17,8 +23,6 @@ All notable changes to this project will be documented in this file.
 * `Include Android SDK package versions in system_report (@ofalvai)`
 * `Update Bitrise CLI to 1.47.2`
 * `Point Android NDK location to $ANDROID_HOME/ndk-bundle instead of /opt/android-ndk`
-
-## [Released]
 
 ## `v2021_08_10`
 * `update brew core and cask`
