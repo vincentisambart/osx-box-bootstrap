@@ -13,6 +13,7 @@ brew_packages:
   - name: "openconnect"
   - name: "awscli"
   - name: "cmake"
+  - name: "gpg"
 
 danger_swift_unsupported_versions:
   - '10.3'
