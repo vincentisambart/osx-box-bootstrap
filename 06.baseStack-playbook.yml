@@ -33,6 +33,7 @@
     - role: brew-packages
     - role: firebase
     - role: node
+    - role: jenv
     - role: ruby
     - role: ruby-gems
     - role: simulators
