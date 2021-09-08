@@ -3,6 +3,6 @@ npm_packages:
   - name: "@ionic/cli"
     version: "6.11.12"
   - name: "cordova"
-    version: "9.0.0"
+    version: "10.0.0"
   - name: "appcenter-cli"
     version: "2.9.0"

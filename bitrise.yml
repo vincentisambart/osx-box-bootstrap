@@ -192,12 +192,6 @@ workflows:
     envs:
       - LOCAL_PLAYBOOK_PATH: ./playbook.yml
 
-  test_node:
-    envs:
-    - ROLE: "node"
-    after_run:
-    - _run_molecule_test
-
   test_ssh-setup:
     envs:
     - ROLE: "ssh-setup"

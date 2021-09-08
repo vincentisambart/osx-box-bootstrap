@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_09_08_1`
+* `update Cordova to 10.0.0`
+
 ## `v2021_09_08`
 * `brew tap dart`
 
