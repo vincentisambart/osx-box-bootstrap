@@ -24,16 +24,18 @@
     - role: keychain
     - role: enable-auto-login
     - role: go
+    - role: bitrise-specific-folders
     - role: bitrise-cli
-    - role: bitrise-den
+    - role: bitrise-agent
     - role: remote-access
     - role: ssh-setup
-    - role: intermediate-setup
     - role: cmd-bridge
-    - role: misc-setup
+    - role: brew-packages
+    - role: firebase
     - role: node
     - role: ruby
     - role: ruby-gems
     - role: simulators
-    - role: weekly-update-shared
+    - role: xcode-tools
+    - role: brew-cleanup-weekly
     # - role: used-tools // exclude until android-ndk path scan is fixed

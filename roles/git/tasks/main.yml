@@ -1,0 +1,15 @@
+---
+- name: "run git lfs install"
+  shell: bash -l -c 'git lfs install'
+
+- name: git config name
+  git_config:
+    name: user.name
+    scope: global
+    value: "J. Doe (https://devcenter.bitrise.io/builds/setting-your-git-credentials-on-build-machines/)"
+
+- name: git config email
+  git_config:
+    name: user.email
+    scope: global
+    value: "please-set-your-email@bitrise.io"

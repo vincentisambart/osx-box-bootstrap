@@ -1,2 +1,6 @@
 # Global match (last matching pattern takes the most precedence)
 * @bitrise-io/bitrise-infra-team
+
+# SME configs
+roles/bitrise-agent @bitrise-io/build-services
+roles/bitrise-cli @bitrise-io/build-tooling

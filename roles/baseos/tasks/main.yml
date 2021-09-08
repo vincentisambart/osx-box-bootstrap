@@ -89,3 +89,69 @@
 - name: Set TZ to UTC
   become: true
   command: systemsetup -settimezone GMT
+
+- name: Ensure /Library/LaunchDaemons/ exists
+  file:
+    path: /Library/LaunchDaemons/
+    state: directory
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: true
+
+# Copy these two plist file to increase Open File Descriptos
+- name: "Setup open-file limit"
+  copy:
+    src: limit.maxfiles.plist
+    dest: /Library/LaunchDaemons/limit.maxfiles.plist
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: true
+
+- name: "Setup max-process limit"
+  copy:
+    src: limit.maxproc.plist
+    dest: /Library/LaunchDaemons/limit.maxproc.plist
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: true
+
+# Setup the debug log file for custom scripts
+#  [!] Collect custom script outputs to ~/Desktop/debug.log, for inspection.
+# You can inspect it during setup with $ tail -f ~/Desktop/debug.log
+#  custom installer scripts use this debug log file
+- name: Setup the debug log file for custom scripts
+  file:
+    path: /Users/{{ param_user }}/Desktop/debug.log
+    state: touch
+    owner: "{{ param_user }}"
+    mode: "0644"
+
+#
+# Add user to sudoers-no-password
+#  don't require password for running sudo with this user
+- name: "Add user {{ param_user }} to sudoers with no password"
+  become: true
+  lineinfile:
+    dest: /etc/sudoers
+    regexp: '^{{ param_user }} ALL'
+    line: '{{ param_user }} ALL=(ALL) NOPASSWD: ALL'
+    state: present
+    validate: 'visudo -cf %s'
+
+# Turn off automatic update
+- name: Turn off macos automatic software updates
+  shell: softwareupdate --schedule off
+  become: true
+
+# Turn off APSD
+- name: "Turn off apsd - can be a CPU hog"
+  shell: launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
+  become: true
+
+# Turn off Gatekeeper
+- name: "Turn off gatekeeper - it will disable the popup of the not appstore downloaded warning"
+  shell: spctl --master-disable
+  become: true

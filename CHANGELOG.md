@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_09_07_6`
+* `refactor vaguely named roles`
+
 ## `v2021_09_07_5`
 * `update homebrew`
 

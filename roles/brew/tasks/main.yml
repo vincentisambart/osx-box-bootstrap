@@ -7,14 +7,6 @@
   become: true
   when: ansible_distribution == 'Ubuntu'
 
-- name: Install git
-  package:
-    name: git
-    state: present
-    update_cache: true
-  become: true
-  when: ansible_distribution == 'Ubuntu'
-
 - name: Check if brew is installed
   shell: "/usr/local/bin/brew config"
   register: is_brew_installed

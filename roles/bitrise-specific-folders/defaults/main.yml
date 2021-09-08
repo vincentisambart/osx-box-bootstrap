@@ -1,7 +1,5 @@
 ---
-ansible_dest: $HOME/ansible.cfg
 bitrise_specific_folder_path: $HOME/{{ item.fold_path }}
-tools_folder_dest: $HOME/bitrise/tools/
 bitrise_specific_folders:
   - fold_path: bin
   - fold_path: bitrise
@@ -13,18 +11,3 @@ bitrise_specific_folders:
   - fold_path: Library/MobileDevice/Provisioning Profiles
   - fold_path: profiles
   - fold_path: stepdir
-brew_packages:
-  - name: ansible
-  - name: coreutils
-  - name: flow
-  - name: ghostscript
-  - name: git
-  - name: git-lfs
-  - name: imagemagick
-  - name: mercurial
-  - name: screen
-  - name: tree
-  - name: watchman
-  - name: wget
-  - name: yarn
-...
