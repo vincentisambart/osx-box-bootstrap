@@ -21,9 +21,14 @@
 - name: Install fvm
   when: is_fvm_available.rc != 0
   block:
-  - name: Tap
+  - name: Tap fvm
     homebrew_tap:
       name: leoafarias/fvm
+      state: present
+      path: "{{ BREW_HOME }}"
+  - name: Tap dart
+    homebrew_tap:
+      name: dart-lang/dart
       state: present
       path: "{{ BREW_HOME }}"
   - name: Install
