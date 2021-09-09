@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+## `v2021_09_09`
+* `Android NDK files moved to the ndk-bundle folder`
 
 ## `v2021_09_08_2`
 * `re run jenv on baseStack creation, to make sure JDK related changes are going live as planned`
