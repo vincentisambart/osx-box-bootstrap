@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+
+## `v2021_09_15`
+* `Update simulator list for Xcode 13`
+
+## [Released]
+
 ## `v2021_09_09`
 * `Android NDK files moved to the ndk-bundle folder`
 
@@ -31,8 +37,6 @@ All notable changes to this project will be documented in this file.
 
 ## `v2021_09_07`
 * `Set JDK11 as default`
-
-## [Released]
 
 ## `v2021_08_23_2`
 * `update brew core and cask`
