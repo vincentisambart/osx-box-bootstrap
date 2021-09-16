@@ -13,7 +13,6 @@
   roles:
     - role: profiles
     - role: baseos
-    - role: git
     - role: xamarin
       when: is_xamarin == true
     - role: brew
@@ -32,6 +31,7 @@
     - role: ssh-setup
     - role: cmd-bridge
     - role: brew-packages
+    - role: git
     - role: firebase
     - role: node
     - role: jenv

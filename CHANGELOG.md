@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_09_16_2`
+* `Change git role order for baseStack`
+
 ## `v2021_09_16_1`
 * `Update PATH to sdkmanager on vs4mac stacks`
 
