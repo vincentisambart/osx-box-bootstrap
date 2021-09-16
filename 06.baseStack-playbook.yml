@@ -13,6 +13,7 @@
   roles:
     - role: profiles
     - role: baseos
+    - role: git
     - role: xamarin
       when: is_xamarin == true
     - role: brew
