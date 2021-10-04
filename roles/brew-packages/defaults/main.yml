@@ -22,6 +22,7 @@ brew_packages:
   - name: "watchman"
   - name: "wget"
   - name: "yarn"
+  - name: "swiftlint"
 danger_swift_unsupported_versions:
   - '10.3'
   - '11.1'

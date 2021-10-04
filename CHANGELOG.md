@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_10_04`
+* `Pre-install swiftlint`
+
 ## `v2021_09_21_1`
 * `Set default java to 1.8 on Vs4mac stacks`
 
