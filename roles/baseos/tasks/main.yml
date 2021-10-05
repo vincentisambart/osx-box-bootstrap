@@ -146,6 +146,15 @@
   shell: softwareupdate --schedule off
   become: true
 
+- name: Get MacOS version
+  command: sw_vers -productVersion
+  register: macos_version
+
+- name: Turn off macos automatic software pre-download on Big Sur
+  become: true
+  shell: defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -boolean FALSE
+  when: macos_version.stdout.split('.')[0] | int >= 11
+
 # Turn off APSD
 - name: "Turn off apsd - can be a CPU hog"
   shell: launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
