@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_10_18`
+* `Accept Flutter Android licenses`
+
 ## `v2021_10_05`
 * `Disable softwareupdate pre-download on Big Sur and forward`
 
