@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 ## `v2021_10_18`
 * `Accept Flutter Android licenses`
 
+## `v2021_10_15`
+* `Updated DEN Agent to 1.36.1`
+
 ## `v2021_10_05`
 * `Disable softwareupdate pre-download on Big Sur and forward`
 
