@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_10_28`
+* `Added simulator list for xcode 13.2`
+
 ## `v2021_10_19`
 * `Added simulator list for xcode 13.1`
 
