@@ -5,6 +5,7 @@ set -x
 
 REPORT_FOLDER="$(mktemp -d)"
 REPORT_BRANCH_NAME="gen2-system-reports-w$(date +%W)"
+GEN2_FOLDER_PATH="$REPORT_FOLDER/system_reports/GEN2"
 
 envman add --key REPORT_BRANCH_NAME --value "${REPORT_BRANCH_NAME}"
 COMMIT_MESSAGE="[CI] System report: ${BITRISEIO_STACK_ID}"
@@ -15,7 +16,13 @@ git checkout "${REPORT_BRANCH_NAME}" || git checkout -b "${REPORT_BRANCH_NAME}"
 popd
 mkdir -p "$REPORT_FOLDER/system_reports/"
 ./system_report.sh > report.log
-mv report.log "$REPORT_FOLDER/system_reports/$BITRISEIO_STACK_ID.log"
+
+# create folder if dos not exist yet
+if [[ ! -d "$GEN2_FOLDER_PATH" ]]; then
+  mkdir -p "$GEN2_FOLDER_PATH"
+fi
+
+mv report.log "$GEN2_FOLDER_PATH/$BITRISEIO_STACK_ID.log"
 pushd "${REPORT_FOLDER}"
 
 # unset -e so git push can fail

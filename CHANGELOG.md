@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_11_04_1`
+* `Push GEN2 system report logs into a specific folder`
+
 ## `v2021_11_04`
 * `Move system report generate script from web UI into repository`
 
