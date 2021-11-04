@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_11_04`
+* `Move system report generate script from web UI into repository`
+
 ## `v2021_10_28`
 * `Added simulator list for xcode 13.2`
 
