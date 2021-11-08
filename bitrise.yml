@@ -81,11 +81,6 @@ workflows:
         run_if: .IsCI
         inputs:
         - file_path: _scripts/check_changes.sh
-    - script-runner:
-        title: Install ansible-lint and yamllint
-        run_if: .IsCI
-        inputs:
-        - file_path: _scripts/install_linters.sh
     - script:
         title: Validate bitrise.yml
         inputs:
@@ -95,6 +90,9 @@ workflows:
             bitrise validate -c ./bitrise.yml
     - script:
         title: Lint Ansible playbooks
+        deps:
+          brew:
+            - name: ansible-lint
         inputs:
         - content: |-
             #!/usr/bin/env bash
@@ -104,6 +102,9 @@ workflows:
             done
     - script:
         title: Run Yamllint
+        deps:
+          brew:
+            - name: yamllint
         inputs:
         - content: |-
             #!/usr/bin/env bash
@@ -126,6 +127,14 @@ workflows:
             set -euxo pipefail
             gem install danger
             danger
+
+  generate-system-report:
+    steps:
+    - script-runner:
+        title: Generate system report
+        run_if: .IsCI
+        inputs:
+        - file_path: _scripts/generate_system_report.sh
 
   perform-weekly-cache-update:
     after_run:
@@ -191,18 +200,6 @@ workflows:
     envs:
       - LOCAL_PLAYBOOK_PATH: ./playbook.yml
 
-  test_ruby:
-    envs:
-    - ROLE: "ruby"
-    after_run:
-    - _run_molecule_test
-
-  test_node:
-    envs:
-    - ROLE: "node"
-    after_run:
-    - _run_molecule_test
-
   test_ssh-setup:
     envs:
     - ROLE: "ssh-setup"
@@ -218,12 +215,6 @@ workflows:
   test_intermediate-setup:
     envs:
     - ROLE: "intermediate-setup"
-    after_run:
-    - _run_molecule_test
-
-  test_flutter:
-    envs:
-    - ROLE: "flutter"
     after_run:
     - _run_molecule_test
 
@@ -266,6 +257,12 @@ workflows:
   test_bitrise-den:
     envs:
     - ROLE: "bitrise-den"
+    after_run:
+    - _run_molecule_test
+
+  test_python:
+    envs:
+    - ROLE: "python"
     after_run:
     - _run_molecule_test
 

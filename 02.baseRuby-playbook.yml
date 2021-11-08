@@ -12,5 +12,4 @@
     - role: profiles
     - role: brew
     - role: brew-repos-fix
-    - role: tmp-setup
     - role: ruby

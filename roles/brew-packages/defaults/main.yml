@@ -1,0 +1,30 @@
+---
+brew_packages:
+  - name: "git"
+  - name: "carthage"
+  - name: "readline"
+  - name: "jq"
+  - name: "screen"
+  - name: "applesimutils"
+  - name: "openconnect"
+  - name: "awscli"
+  - name: "cmake"
+  - name: "gpg"
+  - name: "ansible"
+  - name: "coreutils"
+  - name: "flow"
+  - name: "ghostscript"
+  - name: "git-lfs"
+  - name: "imagemagick"
+  - name: "mercurial"
+  - name: "screen"
+  - name: "tree"
+  - name: "watchman"
+  - name: "wget"
+  - name: "yarn"
+  - name: "swiftlint"
+danger_swift_unsupported_versions:
+  - '10.3'
+  - '11.1'
+  - '11.3'
+...

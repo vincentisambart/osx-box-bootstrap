@@ -1,3 +1,5 @@
+import subprocess
+
 def test_bitrise_cli_exists(host):
     bitrise_cli = host.file("/usr/local/bin/bitrise")
     assert bitrise_cli.user == "linuxbrew"
@@ -5,7 +7,10 @@ def test_bitrise_cli_exists(host):
     assert bitrise_cli.mode == 0o755
 
 def test_bitrise_cli_version(host):
-    assert host.run("bitrise --version").stdout.startswith('1.45.1')
+    actual = host.run("bitrise --version").stdout
+    # be at least 1.48.0
+    required = "1.48"
+    assert actual >= required
 
 def test_envman_is_installed(host):
     assert host.exists("/home/linuxbrew/.bitrise/tools/envman")

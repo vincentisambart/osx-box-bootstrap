@@ -8,14 +8,23 @@
     mode: "0770"
     recurse: true
 
-- name: Download and unzip Android NDK
+- name: Download and unzip Android NDK into temporary location
   become: true
   unarchive:
     src: "{{ android_ndk_source }}"
+    dest: "/tmp/"
+    owner: "{{ param_user }}"
+    mode: "0770"
+    remote_src: true
+
+- name: Copy Android NDK files to NDK home
+  copy:
+    src: "/tmp/android-ndk-{{ android_ndk_version }}/"
     dest: "{{ android_ndk_home }}"
     owner: "{{ param_user }}"
     mode: "0770"
     remote_src: true
+  become: true
 
 - name: Create profile.d directory
   file:

@@ -43,14 +43,12 @@
   when: display_sleep_state.rc == 1
 
 - name: Check is screensaver is disabled
-  become: true
   shell: defaults -currentHost read com.apple.screensaver | grep "idleTime = 0;"
   register: screensaver_state
   changed_when: false
   ignore_errors: true
 
 - name: Disable screensaver
-  become: true
   shell: defaults -currentHost write com.apple.screensaver idleTime 0
   when: screensaver_state.rc == 1
 
@@ -66,6 +64,19 @@
   command: pmset -a hibernatemode 0
   when: hibernate_state.rc == 1
 
+- name: Check if disksleep is disabled
+  become: true
+  shell: pmset -g | grep -q "disksleep.*\ 0$"
+  register: disksleep_state
+  changed_when: false
+  ignore_errors: true
+  check_mode: false
+
+- name: Disable Disksleep
+  become: true
+  shell: pmset -a disksleep 0
+  when: disksleep_state.rc != 0
+
 # This key must exist on the executing ansible server
 # For CI, it is placed from bitrise secrets in the workflow
 # For local, you must install it from lastpass
@@ -74,3 +85,82 @@
     user: vagrant
     state: present
     key: "{{ lookup('file', lookup('env', 'HOME') + '/.ssh/id_ed25519-bitrise.pub') }}"
+
+- name: Set TZ to UTC
+  become: true
+  command: systemsetup -settimezone GMT
+
+- name: Ensure /Library/LaunchDaemons/ exists
+  file:
+    path: /Library/LaunchDaemons/
+    state: directory
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: true
+
+# Copy these two plist file to increase Open File Descriptos
+- name: "Setup open-file limit"
+  copy:
+    src: limit.maxfiles.plist
+    dest: /Library/LaunchDaemons/limit.maxfiles.plist
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: true
+
+- name: "Setup max-process limit"
+  copy:
+    src: limit.maxproc.plist
+    dest: /Library/LaunchDaemons/limit.maxproc.plist
+    owner: root
+    group: wheel
+    mode: "0644"
+  become: true
+
+# Setup the debug log file for custom scripts
+#  [!] Collect custom script outputs to ~/Desktop/debug.log, for inspection.
+# You can inspect it during setup with $ tail -f ~/Desktop/debug.log
+#  custom installer scripts use this debug log file
+- name: Setup the debug log file for custom scripts
+  file:
+    path: /Users/{{ param_user }}/Desktop/debug.log
+    state: touch
+    owner: "{{ param_user }}"
+    mode: "0644"
+
+#
+# Add user to sudoers-no-password
+#  don't require password for running sudo with this user
+- name: "Add user {{ param_user }} to sudoers with no password"
+  become: true
+  lineinfile:
+    dest: /etc/sudoers
+    regexp: '^{{ param_user }} ALL'
+    line: '{{ param_user }} ALL=(ALL) NOPASSWD: ALL'
+    state: present
+    validate: 'visudo -cf %s'
+
+# Turn off automatic update
+- name: Turn off macos automatic software updates
+  shell: softwareupdate --schedule off
+  become: true
+
+- name: Get MacOS version
+  command: sw_vers -productVersion
+  register: macos_version
+
+- name: Turn off macos automatic software pre-download on Big Sur
+  become: true
+  shell: defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -boolean FALSE
+  when: macos_version.stdout.split('.')[0] | int >= 11
+
+# Turn off APSD
+- name: "Turn off apsd - can be a CPU hog"
+  shell: launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
+  become: true
+
+# Turn off Gatekeeper
+- name: "Turn off gatekeeper - it will disable the popup of the not appstore downloaded warning"
+  shell: spctl --master-disable
+  become: true

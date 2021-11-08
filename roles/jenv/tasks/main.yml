@@ -26,7 +26,11 @@
   debug:
     msg: "{{ result.stdout }}"
 
-- name: set Java 8 as Global in jEnv
-  shell: bash -l -c "jenv global 1.8"
+- name: set Java 11 as Global in jEnv on Xcode stacks
+  shell: bash -l -c "jenv global 11"
+  when: is_xamarin == false
 
+- name: set Java 11 as Global in jEnv on Vs4mac stacks
+  shell: bash -l -c "jenv global 1.8"
+  when: is_xamarin == true
 ...

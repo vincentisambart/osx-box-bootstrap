@@ -1,4 +1,317 @@
-## UPCOMING
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+## `v2021_11_04_1`
+* `Push GEN2 system report logs into a specific folder`
+
+## `v2021_11_04`
+* `Move system report generate script from web UI into repository`
+
+## `v2021_10_28`
+* `Added simulator list for xcode 13.2`
+
+## `v2021_10_19`
+* `Added simulator list for xcode 13.1`
+
+## `v2021_10_18`
+* `Accept Flutter Android licenses`
+
+## `v2021_10_15`
+* `Updated DEN Agent to 1.36.1`
+
+## `v2021_10_15`
+* `Update CocoaPods version to 1.11.2`
+
+## `v2021_10_05`
+* `Disable softwareupdate pre-download on Big Sur and forward`
+
+## `v2021_10_04`
+* `Pre-install swiftlint`
+
+## `v2021_09_21_1`
+* `Set default java to 1.8 on Vs4mac stacks`
+
+## `v2021_09_21`
+* `Revert to default sdkmanager on vs4mac stacks`
+
+## `v2021_09_16_2`
+* `Change git role order for baseStack`
+
+## `v2021_09_16_1`
+* `Update PATH to sdkmanager on vs4mac stacks`
+
+## `v2021_09_16`
+* `Add git role to baseStack`
+
+## `v2021_09_15`
+* `Update simulator list for Xcode 13`
+
+## [Released]
+
+## `v2021_09_09`
+* `Android NDK files moved to the ndk-bundle folder`
+
+## `v2021_09_08_2`
+* `re run jenv on baseStack creation, to make sure JDK related changes are going live as planned`
+
+## `v2021_09_08_1`
+* `update Cordova to 10.0.0`
+
+## `v2021_09_08`
+* `brew tap dart`
+
+## `v2021_09_07_6`
+* `refactor vaguely named roles`
+
+## `v2021_09_07_5`
+* `update homebrew`
+
+## `v2021_09_07_4`
+* `update fastlane to 2.192.0`
+
+## `v2021_09_07_3`
+* `pre-install GPG`
+
+## `v2021_09_07_2`
+* `Update Bitrise CLI to 1.48.0`
+
+## `v2021_09_07`
+* `Set JDK11 as default`
+
+## `v2021_08_23_2`
+* `update brew core and cask`
+
+## `v2021_08_23_1`
+* `add iOS 14.5 simulator to Xcode 13 stack`
+
+## `v2021_08_23`
+* `Exclude used-tools monitoring until its fixed`
+
+## `v2021_08_17`
+* `Update fastlane version to 2.191.0 (@D3icidal)`
+* `Upgrade Android SDK command line tools to version 7583922 for Java 11 compatibility (@gmiklos-ltg)`
+* `Include Android SDK package versions in system_report (@ofalvai)`
+* `Update Bitrise CLI to 1.47.2`
+* `Point Android NDK location to $ANDROID_HOME/ndk-bundle instead of /opt/android-ndk`
+
+## `v2021_08_10`
+* `update brew core and cask`
+
+## `v2021_08_10`
+* `fix android cmd-tools path`
+
+## `v2021_07_28_1`
+* `Correct the stack layers order`
+
+## `v2021_07_28`
+* `Upgrade DEN agent to v1.33.0`
+
+## `v2021_07_13`
+* `update appcenter-cli to 1.9.0`
+* `update ci workflow`
+
+## `v2021_07_09`
+* `update Flutter to 2.2.3`
+* `update Android commandline tools to 7302050`
+* `update Android NDK 21e`
+* `add Android build tools 30.0.1 - 30.0.3`
+
+## `v2021_07_06`
+* `update brew repos`
+
+## `v2021_06_30`
+* `update agent to 1.30.1`
+
+## `v2021_06_28`
+* `add 13.0 option to simulators`
+
+## `v2021_06_23`
+* `fix playbook order`
+
+## `v2021_06_21`
+* `scan installed Xcode as basis for selection`
+
+## `v2021_06_21`
+* `install haxm on every stack`
+
+## `v2021_06_17_3`
+* `install haxm on big sur (or later)`
+
+## `v2021_06_17_2`
+* `fix simulator file for previous stable`
+
+## `v2021_06_17_1`
+* `Upgrade DEN agent to v1.30.0`
+
+## `v2021_06_17`
+* `turn off disksleep on vms`
+
+## `v2021_06_15_1`
+* `update hombrew core and homebrew cask`
+
+## `v2021_06_15`
+* `update Bitrise CLI to 1.47.1`
+
+## `v2021_06_14`
+* `update go to 1.16`
+
+## `v2021_06_10`
+* `add xcode install correctness checks`
+
+## `v2021_06_09`
+* `update sql query in enable_accessibility.sh`
+
+## `v2012_06_08_4`
+* `place .ruby-version remove step after "rbenv local" calls (now for real)`
+
+## `v2012_06_08_3`
+* `Add accessibility privileges to Xcode-Helper`
+
+## `v2012_06_08_2`
+* `update bitrise cli to 1.47.0`
+
+## `v2012_06_08_1`
+* `fix(ruby): place .ruby-version remove step after "rbenv local" calls`
+
+## `v2012_06_04`
+* `fix(ruby): move task from ruby role to ruby-gems role`
+
+## `v2012_06_03`
+* `fix(ruby): remove .ruby-version file`
+
+## `v2012_05_29`
+* `Fix xcbeautify version check`
+
+## `v2021_05_28_4`
+* `Move flutter & fvm related PATHs to profiles role`
+
+## `v2012_05_28_3`
+* `Change rol order to set up brew before using it`
+
+## `v2012_05_28_2`
+* `Update brew repos`
+
+## `v2012_05_28_1`
+* `Set TZ to GMT`
+
+## `v2012_05_28`
+* `Use FVM to manage Flutter`
+
+## `v2021_05_27`
+* `Add ruby 2.7.2 and 3.0.0 preinstalled`
+
+## `v2021_05_21_1`
+* `Created a separate role for python`
+
+## `v2021_05_21`
+* `Update Homebrew Core and Cask`
+
+## `v2021_05_19`
+* `Update DEN agent to v1.26.0`
+
+## `v2021_05_14`
+* `enable remote management when needed`
+## `v2021_05_07_1`
+* `fix python and pip permissions`
+
+## `v2021_05_07`
+* `rerun flutter role on last layer`
+
+## `v2021_05_03_1`
+* `exclude danger-swift on old stack`
+
+## `v2021_05_03`
+* `update DEN agent to v1.24.3`
+
+## `v2021_04_30_1`
+* `make sure xcode-install is there for simulators`
+
+## `v2021_04_30`
+* `fix vs4mac simulator installs nicely`
+
+## `v2021_04_28`
+* `update cocoapods to 1.10.1`
+
+## `v2021_04_27_3`
+* `add xcov and jazzy ruby gems`
+
+## `v2021_04_27_2`
+* `add brew upgrade to fix updates fix`
+
+## `v2021_04_27_1`
+* `add brew upgrade to fix updates`
+
+## `v2021_04_27`
+* `fix edge simulator install nicely`
+
+## `v2021_04_22`
+* `add danger-swift`
+
+## `v2021_04_21_2`
+* `Revert installing force brew updating`
+
+## `v2021_04_21_1`
+* `Revert installing iOS 14.5 from 12.5.x`
+
+## `v2021_04_21`
+* `Update xcode_version to 12.5 RC1`
+
+## `v2021_04_13`
+* `Update homebrew cask/core commit sha`
+
+## `v2021_04_12`
+* `add LaunchAgent to unlock login.keychain on startup`
+
+## `v2021_04_09`
+* `add baseos to basestack`
+* `force spotlight disable to always run`
+
+## `v2021_04_07_1`
+* `added export GO111MODULE=auto to profiles`
+
+## `v2021_04_07`
+* `initialise simulators as vagrant, not root`
+
+## `v2021_03_31`
+* `upgrade brew cache during weekly update`
+
+## `v2021_03_30_2`
+* `jq bin fix for den`
+
+## `v2021_03_30_1`
+* `(simulators) install iOS 14.5 on Xcode 12.5`
+
+## `v2021_03_30`
+* `Integrate bin monitoring tool`
+
+## `v2021_03_29_1`
+* `(xcode) debug logs and robust xcode selection`
+
+## `v2021_03_29`
+* `Generate missing SSH host keys`
+
+## `v2021_03_25`
+* `Added simulator variable files for legacy stacks`
+
+## `v2021_03_24`
+* `Upgrade DEN agent to v1.22.1`
+
+## `v2021_03_23`
+* `Fix home in xcode role`
+
+## `v2021_03_22_3`
+* `Force the download of bitrise-cli`
+
+## `v2021_03_22_2`
+* `Fix brew commit sha`
+
+## `v2021_03_22`
+* `W11 weekly fixes * Go, Bitrise CLI, DEN Agent`
+
+## `v2021_03_19_3`
+* `Spotlight variable fix`
 
 ## `v2021_03_19`
 * `DEN agent downloaded by version from GitHub`

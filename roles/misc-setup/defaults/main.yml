@@ -1,5 +1,0 @@
----
-brew_packages:
-  - name: carthage
-  - name: readline
-...

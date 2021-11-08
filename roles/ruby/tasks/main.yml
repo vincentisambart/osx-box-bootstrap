@@ -5,19 +5,14 @@
     state: latest  # noqa 403 Package installs should not use latest
     update_homebrew: true
 
-- name: unlink openssl
-  homebrew:
-    name: openssl
-    state: absent
-  when: ansible_distribution == 'Ubuntu'
-
-- name: Install ruby versions
-  shell: bash -l -c "rbenv install --skip-existing {{ item.version }}"
-  when: is_incremental_setup|default(false) == false
+- name: Install Ruby versions
+  include_tasks:
+    file: ruby.yml
   with_items:
-    - "{{ default_ruby }}"
     - "{{ ruby_versions }}"
+  loop_control:
+    loop_var: ruby
 
-- name: Set ruby latest to global
-  shell: bash -l -c "rbenv global {{ default_ruby.0.version }}"
+- name: Set default ruby to global
+  shell: bash -l -c "rbenv global {{ default_ruby }}"
   when: is_incremental_setup|default(false) == false

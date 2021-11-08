@@ -36,6 +36,7 @@ ver_line="$(java -version 2>&1 >/dev/null)" ;     echo "* Java: $ver_line"
 # When we run it again it displays the current version only
 flutter --version > /dev/null 2>&1
 ver_line="$(flutter --version | head -n 1)" ;     echo "* Flutter: $ver_line"
+ver_line="$(fvm --version)";                      echo "* fvm: $ver_line"
 
 echo
 ver_line="$(git --version)" ;                     echo "* git: $ver_line"
@@ -73,6 +74,7 @@ ver_line="$(applesimutils --version | awk '{print $1, $3}')"; echo "* $ver_line"
 ver_line="$(openconnect --version | head -n 1)";              echo "* $ver_line"
 ver_line="$(aws --version)" ;                                 echo "* aws-cli: $ver_line"
 ver_line="$(cmake --version | head -n1 | awk '{print $3}')" ; echo "* cmake: $ver_line"
+ver_line="$(danger-swift --version)" ;                        echo "* danger-swift: $ver_line"
 
 
 
@@ -277,6 +279,13 @@ if [ -n "$ANDROID_HOME" ] ; then
   echo "* system-images content:"
   tree -L 3 ${ANDROID_HOME}/system-images
   echo
+  echo "========================================"
+  echo
+
+  echo " * SDK packages:"
+  grep ^Pkg.Revision "${ANDROID_HOME}"/cmdline-tools/*/source.properties | cut -d= -f 2 | xargs -I {} echo "* Command line Tools version: {}"
+  grep ^Pkg.Revision "${ANDROID_HOME}"/platform-tools/source.properties | cut -d= -f 2 | xargs -I {} echo "* Platform Tools version: {}"
+  grep ^Pkg.Revision "${ANDROID_HOME}"/emulator/source.properties | cut -d= -f 2 | xargs -I {} echo "* Emulator version: {}"
   echo "========================================"
   echo
 fi
