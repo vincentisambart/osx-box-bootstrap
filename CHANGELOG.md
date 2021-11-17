@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_11_17_1`
+* `Upgrade molecule's Ansible installation`
+
 ## `v2021_11_04_1`
 * `Push GEN2 system report logs into a specific folder`
 
