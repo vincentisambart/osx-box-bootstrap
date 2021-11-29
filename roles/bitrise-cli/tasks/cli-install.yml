@@ -1,7 +1,7 @@
 ---
 - name: "bitrise CLI: download {{ bitrise_cli_version }}"
   get_url:
-    url: https://github.com/bitrise-io/bitrise/releases/download/{{ bitrise_cli_version }}/bitrise-{{ ansible_system }}-x86_64  # yamllint disable-line rule:line-length
+    url: https://github.com/bitrise-io/bitrise/releases/download/{{ bitrise_cli_version }}/bitrise-{{ ansible_system }}-{{ ansible_architecture }}  # yamllint disable-line rule:line-length
     dest: /usr/local/bin/bitrise
     force: true  # always overwrite
     mode: '0755'

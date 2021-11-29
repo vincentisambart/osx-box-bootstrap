@@ -21,17 +21,21 @@
     executable: /bin/bash
   register: asset_id
 
+- name: Set arch
+  set_fact:
+    arch: "{{ 'amd64' if ansible_architecture == 'x86_64' else ('arm64' if ansible_architecture == 'arm64' else '386') }}"
+
 - name: Download den agent
   get_url:
     url: "https://api.github.com/repos/bitrise-io/den/releases/assets/{{ asset_id.stdout }}"
-    dest: /var/tmp/bitrise-den-darwin-amd64.zip
+    dest: /var/tmp/bitrise-den-darwin-{{ arch }}.zip
     headers:
       Authorization: "token {{ lookup('env', 'GITHUB_ACCESS_TOKEN') }}"
       Accept: "application/octet-stream"
 
 - name: "bitrise DEN: extract"
   unarchive:
-    src: /var/tmp/bitrise-den-darwin-amd64.zip
+    src: /var/tmp/bitrise-den-darwin-{{ arch }}.zip
     dest: "{{ ansible_env.HOME }}"
     exclude:
       - bitrise-den-cli

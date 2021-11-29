@@ -1,11 +1,21 @@
 ---
 - name: Download cmd-bridge
   get_url:
-    url: https://github.com/bitrise-io/cmd-bridge/releases/download/0.9.5/cmd-bridge-Darwin-x86_64
+    url: https://github.com/bitrise-io/cmd-bridge/releases/download/0.9.5/cmd-bridge-Darwin-{{ ansible_architecture }}
     dest: /usr/local/bin/cmd-bridge
     checksum: sha256:ccafaf8f600d9d887a8b215106c31f25cd6c570011d908bd6cf0b0b2991bb94d
     mode: '0755'
   become: true
+  when: ansible_architecture == 'x86_64'
+
+- name: copy cmd-bridge binary to machine
+  copy:
+    src: cmd-bridge
+    dest: /usr/local/bin/cmd-bridge
+    owner: "{{ param_user }}"
+    mode: '0755'
+  become: true
+  when: ansible_architecture == arm64
 
 - name: Create directory for cmd-bridge logs
   file:

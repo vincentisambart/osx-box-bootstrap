@@ -6,12 +6,12 @@
   ignore_errors: true
   no_log: true
 
-- name: get Xclogparser 0.2.21
+- name: get Xclogparser 0.2.28
   get_url:
-    url: https://github.com/spotify/XCLogParser/releases/download/v0.2.21/XCLogParser-macOS-x86_64-v0.2.21.zip
-    checksum: sha256:f74caec7c8710dcdb0f4089001fd62d14daa5d3922b9b69626d7b9ce7b8e33e9
+    url: https://github.com/spotify/XCLogParser/releases/download/v0.2.28/XCLogParser-macOS-{{ ansible_architecture }}-v0.2.28.zip
+    # checksum: sha256:f74caec7c8710dcdb0f4089001fd62d14daa5d3922b9b69626d7b9ce7b8e33e9
     dest: /tmp/xclogparser.zip
-  when: xclogparser_version.rc != 0 or xclogparser_version.stdout != "0.2.21"
+  when: xclogparser_version.rc != 0 or xclogparser_version.stdout != "0.2.28"
 
 - name: unarchive xclogparser binary
   unarchive:
@@ -21,7 +21,7 @@
     mode: "0755"
     remote_src: true
   become: true
-  when: xclogparser_version.rc != 0 or xclogparser_version.stdout != "0.2.21"
+  when: xclogparser_version.rc != 0 or xclogparser_version.stdout != "0.2.28"
 
 # XCBeautify
 - name: Check if XCBeautify is present
@@ -30,12 +30,12 @@
   ignore_errors: true
   no_log: true
 
-- name: get XCBeautify 0.8.1
+- name: get XCBeautify 0.10.1
   get_url:
-    url: https://github.com/thii/xcbeautify/releases/download/0.8.1/xcbeautify-0.8.1-x86_64-apple-macosx.zip
-    checksum: sha256:75e9d345a68a759ab268f0ecef4373a0ae590b07939096a076bdb25f20e69143
+    url: https://github.com/thii/xcbeautify/releases/download/0.10.1/xcbeautify-0.10.1-{{ ansible_architecture }}-apple-macosx.zip
+    # checksum: sha256:75e9d345a68a759ab268f0ecef4373a0ae590b07939096a076bdb25f20e69143
     dest: /tmp/xcbeautify.zip
-  when: xcbeautify_version.rc != 0 or xcbeautify_version.stdout != "0.8.1"
+  when: xcbeautify_version.rc != 0 or xcbeautify_version.stdout != "0.10.1"
 
 - name: unarchive XCBeautify binary
   unarchive:
@@ -45,5 +45,5 @@
     mode: "0755"
     remote_src: true
   become: true
-  when: xcbeautify_version.rc != 0 or xcbeautify_version.stdout != "0.8.1"
+  when: xcbeautify_version.rc != 0 or xcbeautify_version.stdout != "0.10.1"
 ...

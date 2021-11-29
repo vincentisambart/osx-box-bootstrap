@@ -31,13 +31,18 @@
 # ----------------------------------------
 # --- ngrok install ---
 # ----------------------------------------
+
+- name: Set arch
+  set_fact:
+    arch: "{{ 'amd64' if ansible_architecture == 'x86_64' else ('arm64' if ansible_architecture == 'arm64' else '386') }}"
+
 - name: "ngrok-binary: download"
   get_url:
-    url: https://bin.equinox.io/c/gDfFGFRN2Jh/ngrok-link-stable-darwin-amd64.zip
-    dest: /tmp/ngrok-link-stable-darwin-amd64.zip
+    url: https://bin.equinox.io/c/gDfFGFRN2Jh/ngrok-link-stable-darwin-{{ arch }}.zip
+    dest: /tmp/ngrok-link-stable-darwin-{{ arch }}.zip
 - name: "ngrok-binary: install"
   unarchive:
-    src: /tmp/ngrok-link-stable-darwin-amd64.zip
+    src: /tmp/ngrok-link-stable-darwin-{{ arch }}.zip
     dest: /usr/local/bin
     owner: "{{ param_user }}"
     copy: false
@@ -45,6 +50,6 @@
   become: true
 - name: "ngrok-binary: remove temp file"
   file:
-    path: /tmp/ngrok-link-stable-darwin-amd64.zip
+    path: /tmp/ngrok-link-stable-darwin-{{ arch }}.zip
     state: absent
 ...
