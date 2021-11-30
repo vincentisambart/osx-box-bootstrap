@@ -35,13 +35,13 @@
   ignore_errors: true
   when: result.rc == 0
 
+- name: Set java download urls
+  set_fact:
+    java_urls: "{{ 'intel_urls' if ansible_architecture == 'x86_64' else 'arm_urls' }}"
+
 - name: Install Intel JDK
   include_tasks:
-    file: java-intel.yml
-  when: ansible_architecture == 'x86_64'
-
-- name: Install ARM JDK
-  include_tasks:
-    file: java-arm.yml
-  when: ansible_architecture == 'arm64'
+    file: java.yml
+  with_items:
+    - "{{ java_urls }}"
 ...

@@ -1,0 +1,7 @@
+---
+intel_urls:
+  java_8_url: https://cdn.azul.com/zulu/bin/zulu8.58.0.13-ca-jdk8.0.312-macosx_x64.zip
+  java_11_url: https://cdn.azul.com/zulu/bin/zulu11.52.13-ca-jdk11.0.13-macosx_x64.zip
+arm_urls:
+  java_8_url: https://cdn.azul.com/zulu/bin/zulu18.0.57-ea-jdk18.0.0-ea.24-macosx_aarch64.zip
+  java_11_url: https://cdn.azul.com/zulu/bin/zulu11.52.13-ca-jdk11.0.13-macosx_aarch64.zip

@@ -1,0 +1,38 @@
+---
+- name: "Azul JDK: download Java 8"
+  get_url:
+    url: "{{ java_urls.java_8_url }}"
+    dest: /tmp/azul-jdk-8.zip
+
+- name: "Java 8 binary: install"
+  unarchive:
+    src: /tmp/azul-jdk-8.zip
+    dest: /usr/{{ param_user }}/java_home/1.8
+    owner: "{{ param_user }}"
+    copy: false
+    mode: 0700
+  become: true
+
+- name: "Azul JDK: remove temp file"
+  file:
+    path: /tmp/azul-jdk-8.zip
+    state: absent
+
+- name: "Azul JDK: download Java 11"
+  get_url:
+    url: "{{ java_urls.java_11_url }}"
+    dest: /tmp/azul-jdk-11.zip
+
+- name: "Java 11 binary: install"
+  unarchive:
+    src: /tmp/azul-jdk-11.zip
+    dest: /usr/{{ param_user }}/java_home/11
+    owner: "{{ param_user }}"
+    copy: false
+    mode: 0700
+  become: true
+
+- name: "Azul JDK: remove temp file"
+  file:
+    path: /tmp/azul-jdk-11.zip
+    state: absent
