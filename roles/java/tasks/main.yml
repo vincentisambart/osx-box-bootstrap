@@ -35,39 +35,13 @@
   ignore_errors: true
   when: result.rc == 0
 
-- name: brew uninstall latest java
-  homebrew:
-    name: java
-    state: absent
-    install_options: ignore-dependencies
-
-- name: Homebrew cask versions
+- name: Install Intel JDK
   include_tasks:
-    file: cask-versions-repo.yml
+    file: java-intel.yml
+  when: ansible_architecture == 'x86_64'
 
-- name: brew tap openjdk library
-  homebrew_tap:
-    name: AdoptOpenJDK/openjdk
-    state: present
-
-- name: brew install openjdk8
-  homebrew_cask:
-    name: adoptopenjdk8
-    state: present
-
-- name: brew install openjdk11
-  homebrew_cask:
-    name: adoptopenjdk11
-    state: present
-
-- name: Register JAVA_HOME for java 8
-  shell: /usr/libexec/java_home -v 1.8
-  register: detect_java_8_home
-  ignore_errors: true
-
-- name: Register JAVA_HOME for java 11
-  shell: /usr/libexec/java_home -v 11
-  register: detect_java_11_home
-  ignore_errors: true
-
+- name: Install ARM JDK
+  include_tasks:
+    file: java-arm.yml
+  when: ansible_architecture == 'arm64'
 ...

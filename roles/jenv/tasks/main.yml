@@ -16,21 +16,16 @@
     mode: "0755"
 
 - name: jEnv add Java 8  # noqa 306 Shells that use pipes should set the pipefail option
-  shell: . /Users/{{ param_user }}/.bashrc && (yes | jenv add {{ detect_java_8_home.stdout }})
-  register: result
+  shell: . /Users/{{ param_user }}/.bashrc && (yes | jenv add /usr/java_home/1.8/zulu-8.jdk/Contents/Home
 
 - name: jEnv add Java 11  # noqa 306 Shells that use pipes should set the pipefail option
-  shell: . /Users/{{ param_user }}/.bashrc && (yes | jenv add {{ detect_java_11_home.stdout }})
-
-- name: Display jEnv home
-  debug:
-    msg: "{{ result.stdout }}"
+  shell: . /Users/{{ param_user }}/.bashrc && (yes | jenv add /usr/java_home/11/zulu-11.jdk/Contents/Home
 
 - name: set Java 11 as Global in jEnv on Xcode stacks
   shell: bash -l -c "jenv global 11"
   when: is_xamarin == false
 
-- name: set Java 11 as Global in jEnv on Vs4mac stacks
+- name: set Java 8 as Global in jEnv on Vs4mac stacks
   shell: bash -l -c "jenv global 1.8"
   when: is_xamarin == true
 ...
