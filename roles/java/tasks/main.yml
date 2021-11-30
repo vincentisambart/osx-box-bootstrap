@@ -39,7 +39,7 @@
   set_fact:
     java_urls: "{{ 'intel_urls' if ansible_architecture == 'x86_64' else 'arm_urls' }}"
 
-- name: Install Intel JDK
+- name: Install Azul JDK
   include_tasks:
     file: java.yml
   with_items:
