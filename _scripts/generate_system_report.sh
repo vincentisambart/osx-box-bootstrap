@@ -10,7 +10,7 @@ GEN2_FOLDER_PATH="$REPORT_FOLDER/system_reports/GEN2"
 envman add --key REPORT_BRANCH_NAME --value "${REPORT_BRANCH_NAME}"
 COMMIT_MESSAGE="[CI] System report: ${BITRISEIO_STACK_ID}"
 
-git clone https://"${GITHUB_TOKEN}@github.com/bitrise-io/bitrise.io.git ${REPORT_FOLDER}"/
+git clone "https://${GITHUB_TOKEN}@github.com/bitrise-io/bitrise.io.git" "${REPORT_FOLDER}"/
 pushd "${REPORT_FOLDER}"
 git checkout "${REPORT_BRANCH_NAME}" || git checkout -b "${REPORT_BRANCH_NAME}"
 popd

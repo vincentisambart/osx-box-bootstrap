@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_12_10`
+* `No stack changes, system report generation script update`
+
 ## `v2021_11_17_1`
 * `Upgrade molecule's Ansible installation`
 
