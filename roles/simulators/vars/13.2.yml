@@ -8,3 +8,4 @@ simulators:
   - 'iOS 15.0'
   - 'iOS 14.5'
   - 'iOS 14.4'
+  - 'iOS 13.7'

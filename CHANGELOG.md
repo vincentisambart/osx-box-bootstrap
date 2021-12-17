@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_12_17`
+* `Added simulator 13.7 to 13.2 stack`
+
+## [Released]
+
 ## `v2021_12_14`
 * `Added simulators for 13.2 GA`
 
@@ -56,8 +61,6 @@ All notable changes to this project will be documented in this file.
 
 ## `v2021_09_15`
 * `Update simulator list for Xcode 13`
-
-## [Released]
 
 ## `v2021_09_09`
 * `Android NDK files moved to the ndk-bundle folder`
