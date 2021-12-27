@@ -6,6 +6,7 @@ set -x
 REPORT_FOLDER="$(mktemp -d)"
 REPORT_BRANCH_NAME="gen2-system-reports-w$(date +%W)"
 GEN2_FOLDER_PATH="$REPORT_FOLDER/system_reports/GEN2"
+GEN1_FOLDER_PATH="$REPORT_FOLDER/system_reports/GEN1"
 
 envman add --key REPORT_BRANCH_NAME --value "${REPORT_BRANCH_NAME}"
 COMMIT_MESSAGE="[CI] System report: ${BITRISEIO_STACK_ID}"
@@ -17,12 +18,25 @@ popd
 mkdir -p "$REPORT_FOLDER/system_reports/"
 ./system_report.sh > report.log
 
-# create folder if dos not exist yet
+# create Gen2 folder if dos not exist yet
 if [[ ! -d "$GEN2_FOLDER_PATH" ]]; then
   mkdir -p "$GEN2_FOLDER_PATH"
 fi
 
-mv report.log "$GEN2_FOLDER_PATH/$BITRISEIO_STACK_ID.log"
+# create Gen1 folder if dos not exist yet
+if [[ ! -d "$GEN1_FOLDER_PATH" ]]; then
+  mkdir -p "$GEN1_FOLDER_PATH"
+fi
+
+HOSTNAME_REGEXP='standard|elite'
+if [[ $(hostname -s) =~ $h_regex ]]; then
+    echo GEN2T stack detected
+    mv report.log "$GEN1_FOLDER_PATH/$BITRISEIO_STACK_ID.log"
+else
+    echo G2 stack detected
+    mv report.log "$GEN2_FOLDER_PATH/$BITRISEIO_STACK_ID.log"
+fi
+
 pushd "${REPORT_FOLDER}"
 
 # unset -e so git push can fail
