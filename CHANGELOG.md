@@ -3,10 +3,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## `v2021_12_17`
-* `Added simulator 13.7 to 13.2 stack`
+## `v2021_12_28`
+* `Gen1 sysemreports go to GEN1 folder`
 
 ## [Released]
+
+## `v2021_12_17`
+* `Added simulator 13.7 to 13.2 stack`
 
 ## `v2021_12_14`
 * `Added simulators for 13.2 GA`
