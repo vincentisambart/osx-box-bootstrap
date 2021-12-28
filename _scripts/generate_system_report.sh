@@ -29,7 +29,7 @@ if [[ ! -d "$GEN1_FOLDER_PATH" ]]; then
 fi
 
 HOSTNAME_REGEXP='standard|elite'
-if [[ $(hostname -s) =~ $HOSTNAME_REGEXP ]]; then
+if [[ $(hostname -f) =~ $HOSTNAME_REGEXP ]]; then
     echo GEN2T stack detected
     mv report.log "$GEN1_FOLDER_PATH/$BITRISEIO_STACK_ID.log"
 else
