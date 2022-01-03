@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2021_12_23`
+* `Enable Monetery accessibility features from script`
+
 ## `v2021_12_17`
 * `Added simulator 13.7 to 13.2 stack`
 
