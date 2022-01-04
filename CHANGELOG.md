@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2022_01_04`
+* `Accept Android licenses automatically. without flutter doctor`
+
 ## `v2021_12_23`
 * `Enable Monetery accessibility features from script`
 

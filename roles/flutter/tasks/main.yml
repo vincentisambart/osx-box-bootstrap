@@ -55,7 +55,6 @@
 
   - name: Run flutter doctor
     shell: bash -l -c "{{ BREW_HOME }}/fvm flutter doctor"
+    ignore_errors: true
 
-  - name: Accept android licenses
-    shell: bash -l -c "{{ BREW_HOME }}/fvm flutter doctor --android-licenses"
 ...

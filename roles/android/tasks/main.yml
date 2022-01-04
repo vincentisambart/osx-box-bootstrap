@@ -82,4 +82,10 @@
     owner: "{{ param_user }}"
     group: staff
     mode: '0755'
+
+- name: accept SDK licenses
+  environment:
+    PATH: "{{ android_home }}/cmdline-tools/cmdline-tools/bin:{{ ansible_env.PATH }}"
+  shell: bash -l -c "yes | sdkmanager --licenses"  # noqa risky-shell-pipe no-changed-when
+
 ...
