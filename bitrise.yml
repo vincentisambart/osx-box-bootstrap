@@ -136,6 +136,14 @@ workflows:
         inputs:
         - file_path: _scripts/generate_system_report.sh
 
+  generate-system-report-nightly:
+    steps:
+    - script-runner:
+        title: Generate nightly system report
+        run_if: .IsCI
+        inputs:
+        - file_path: _scripts/generate_system_report.sh
+
   perform-weekly-cache-update:
     after_run:
     - _ansible-play

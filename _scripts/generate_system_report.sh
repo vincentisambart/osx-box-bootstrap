@@ -4,7 +4,7 @@ set -e
 set -x
 
 REPORT_FOLDER="$(mktemp -d)"
-REPORT_BRANCH_NAME="gen2-system-reports-w$(date +%W)"
+REPORT_BRANCH_NAME="${REPORT_BRANCH_NAME_BASE_OVERRIDE:-gen2-system-reports}-w$(date +%W)"
 GEN2_FOLDER_PATH="$REPORT_FOLDER/system_reports/GEN2"
 
 envman add --key REPORT_BRANCH_NAME --value "${REPORT_BRANCH_NAME}"

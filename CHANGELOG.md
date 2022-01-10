@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2022_01_10`
+* `Enable nightly system reports.`
+
 ## `v2022_01_05`
 * `Jenv related changes fixes.`
 
