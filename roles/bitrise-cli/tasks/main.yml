@@ -5,10 +5,23 @@
   ignore_errors: true
   register: cli_is_installed
 
+- name: Test if analytics plugin is installed
+  shell: bash -l -c "bitrise plugin info analytics --format json"
+  changed_when: false
+  ignore_errors: true
+  register: cli_analytics_is_installed
+
 - name: Install/Update Bitrise CLI
   include_tasks:
     file: cli-install.yml
   when: >
     cli_is_installed.rc != 0 or
     cli_is_installed.stdout != bitrise_cli_version|string
+
+- name: Install/Update Bitrise CLI analytics plugin
+  include_tasks:
+    file: cli-install.yml
+  when: >
+    cli_analytics_is_installed.rc != 0 or
+    (cli_analytics_is_installed.stdout|from_json).version != bitrise_cli_analytics_version|string
 ...

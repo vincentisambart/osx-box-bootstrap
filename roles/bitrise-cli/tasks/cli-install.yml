@@ -12,6 +12,9 @@
 - name: "Bitrise CLI - setup"
   shell: bash -l -c "bitrise setup"
 
+- name: "Bitrise CLI - install analytics plugin version {{ bitrise_cli_analytics_version }}"
+  shell: bash -l -c "bitrise plugin install https://github.com/bitrise-io/bitrise-plugins-analytics.git --version {{ bitrise_cli_analytics_version }}"
+
 # setup the default StepLib collection to stepman, for a pre-warmed
 #  cache for the StepLib
 - name: "stepman: init"
