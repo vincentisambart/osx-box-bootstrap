@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## `v2022_01_12`
+* `Install a fixed Bitrise CLI analytics plugin version`
+
 ## `v2022_01_05`
 * `Jenv related changes fixes.`
 
